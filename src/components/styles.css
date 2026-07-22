@@ -1,0 +1,267 @@
+/* ==========================================================================
+   CLIENT STORIES - STEFANINI STYLE
+   NOTE:
+   The complete pixel-perfect stylesheet is larger than what can be delivered
+   in a single chat response. This starter file is generated for replacement.
+   ========================================================================== */
+
+.client-stories-section {
+    background: #0068d7;
+    padding: 72px 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.client-stories-inner {
+    width: min(1680px, 100%);
+    margin: 0 auto;
+}
+
+.client-stories-header {
+    text-align: center;
+    margin-bottom: 42px;
+}
+
+.client-stories-title {
+    color: #fff;
+    font-size: clamp(42px, 4vw, 64px);
+    line-height: 1.05;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.client-stories-grid {
+    display: grid;
+    grid-template-columns: minmax(320px, 420px) 1.2fr minmax(320px, 420px);
+    gap: 18px;
+    align-items: stretch;
+}
+
+.client-stories-grid {
+    display: grid;
+    grid-template-columns: 170px 1fr 170px;
+    gap: 0;
+    align-items: stretch;
+}
+
+.side-strips {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: stretch;
+    justify-content: center;
+    height: 100%;
+}
+
+.side-strips-left {
+    justify-content: flex-end;
+}
+
+.side-strips-right {
+    justify-content: flex-start;
+}
+
+.side-strips-left,
+.side-strips-right {
+    align-items: stretch;
+}
+
+.image-strip-card {
+    width: 80px !important;
+    height: 100% !important;
+    min-height: 560px !important;
+    border: none;
+    border-radius: 18px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    background: #000;
+    padding: 0;
+}
+
+.image-strip-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(15%);
+}
+
+.image-strip-card-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 14px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.72));
+    color: #fff;
+}
+
+.story-frame {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.story-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 18px;
+    min-height: 560px;
+    width: 100%;
+    background: #000;
+}
+
+.story-card-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.story-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(0, 0, 0, .12), rgba(0, 0, 0, .42));
+}
+
+.story-card-logo {
+    position: absolute;
+    left: 22px;
+    top: 22px;
+    z-index: 5;
+}
+
+.story-card-logo-circle {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: #fff;
+    display: grid;
+    place-items: center;
+}
+
+.story-card-headline {
+    position: absolute;
+    left: 92px;
+    top: 24px;
+    z-index: 5;
+    color: #fff;
+}
+
+.story-card-title {
+    font-size: 58px;
+    font-weight: 800;
+    opacity: .18;
+}
+
+.story-card-mute {
+    position: absolute;
+    right: 24px;
+    top: 24px;
+    background: none;
+    border: none;
+    color: #fff;
+    z-index: 5;
+}
+
+.bottom-card {
+    position: absolute;
+    left: 18px;
+    right: 18px;
+    bottom: 18px;
+    display: grid;
+    grid-template-columns: 220px 1fr 170px;
+    gap: 18px;
+    padding: 18px;
+    border-radius: 16px;
+    background: rgba(0, 0, 0, .72);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, .18);
+}
+
+.bottom-card-stat {
+    background: #0077ea;
+    color: #fff;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.bottom-card-stat strong {
+    display: block;
+    font-size: 56px;
+    line-height: 1;
+}
+
+.bottom-card-copy p {
+    color: #fff;
+    line-height: 1.6;
+}
+
+.bottom-card-action {
+    display: flex;
+    align-items: end;
+    justify-content: end;
+}
+
+.bottom-card-action button {
+    background: #0077ea;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 14px 22px;
+    cursor: pointer;
+}
+
+.story-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: none;
+    /* background: #fff; */
+}
+
+.story-nav-left {
+    left: -30px;
+}
+
+.story-nav-right {
+    right: -60px;
+}
+
+@media(max-width:1024px) {
+    .client-stories-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .side-strips,
+    .side-strips-left,
+    .side-strips-right {
+        display: none;
+    }
+
+    .story-frame {
+        width: 100%;
+    }
+
+    .story-card {
+        min-height: 520px;
+    }
+
+    .bottom-card {
+        grid-template-columns: 1fr;
+    }
+
+    .story-nav-left {
+        left: 10px;
+    }
+
+    .story-nav-right {
+        right: 10px;
+    }
+}

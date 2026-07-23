@@ -1,110 +1,147 @@
-import React from 'react'
-import { FaClock, FaEnvelope, FaFacebook, FaIndustry, FaInstagram, FaLinkedinIn, FaMapMarkerAlt, FaPhoneAlt, FaTwitter, FaYoutube } from 'react-icons/fa';
+import React from "react";
+import {
+    FaInstagram,
+    FaLinkedin,
+    FaYoutube,
+} from "react-icons/fa";
 
-function Footer() {
-    const socialLinks = [
-        { icon: <FaFacebook className='text-lg' />, label: "Facebook" },
-        { icon: <FaTwitter className='text-lg' />, label: "Twitter" },
-        { icon: <FaInstagram className='text-lg' />, label: "Instagram" },
-        { icon: <FaLinkedinIn className='text-lg' />, label: "LinkedIn" },
-        { icon: <FaYoutube className='text-lg' />, label: "Youtube" },
+const Footer = () => {
+    const solutions = [
+        "Artificial Intelligence",
+        "Consulting Services",
+        "Cloud",
+        "Cybersecurity",
+        "Topaz",
+        "Marketing",
+        "Manufacturing",
+        "Data & Analytics",
+        "Enterprise Platforms",
+        "Digital Workplace Services",
+        "Hybrid Infrastructure",
+        "Applications",
+        "Operations",
     ];
-    const quickLinks = [
-        { text: "Home", href: "#home" },
-        { text: "About Us", href: "#about" },
-        { text: "Our Services", href: "#services" },
-        { text: "Our Products", href: "#products" },
-        { text: "Contact Us", href: "#contact" },
+
+    const industries = [
+        "Consumer Services",
+        "Telecom",
+        "Retail Industry",
+        "Financial Services",
+        "Public and Social Sector",
+        "Natural Resources",
+        "Consumer Goods",
+        "Industrial Goods",
+        "Health and Life Sciences",
     ];
-    const contactInfo = [
-        {
-            icon: <FaMapMarkerAlt className='text-blue-500 text-xl mt-1 mr-4 flex-shrink-0' />,
-            content: <span className='text-gray-400 hover:text-blue-500 transition'>
-                D-31, Bhuneshwari Green Estate, Near Radhika Garden. P.C. 831008, Jamshedpur, Jharkhand, India
-            </span>
-        },
-        {
-            icon: <FaPhoneAlt className='text-blue-500 text-xl mt-1 mr-4 flex-shrink-0' />,
-            content: <span className='text-gray-400 hover:text-blue-500 transition'>
-                91-9304824637, 0657-2346622
-            </span>
-        },
-        {
-            icon: <FaEnvelope className='text-blue-500 text-xl mt-1 mr-4 flex-shrink-0' />,
-            content: <span className='text-gray-400 hover:text-blue-500 transition'>
-                contact@pcats.co.in
-            </span>
-        },
-        {
-            icon: <FaClock className='text-blue-500 text-xl mt-1 mr-4 flex-shrink-0' />,
-            content: <span className='text-gray-400 hover:text-blue-500 transition'>
-                Monday - Saturday : 09:00 AM - 06:00 PM
-                Sunday: Closed
-            </span>
-        },
+
+    const institutional = [
+        "Stefanini",
+        "Library",
+        "Case Studies",
+        "Contact",
+        "Information Security Policy",
+        "Occupational Health & Safety Policy",
+        "Privacy Policy",
     ];
+
     return (
-        <footer className='bg-gray-900 text-white pt-16 pb-8'>
-            <div className='container mx-auto px-4'>
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12'>
-                    <section className='lg:col-span-2'>
-                        <header className='flex items-center mb-6'>
-                            <img src="/favicon.png" alt="Logo" className='w-24 h-10 mr-4' aria-hidden='true' />
-                            {/* <h2 className='text-2xl font-bold'>VMCPLT</h2> */}
+        <footer className="bg-[#0E184C] text-white rounded-t-3xl mt-20">
+            <div className="max-w-[1700px] mx-auto px-8 lg:px-12 py-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16">
+                    <div className="flex flex-col justify-between min-h-[380px]">
+                        <div>
+                            <img
+                                src="../favicon2.png"
+                                alt="Logo"
+                                className="w-56"
+                            />
+                        </div>
+                        <div className="flex gap-6 text-3xl">
+                            <a
+                                href="#"
+                                className="hover:text-blue-400 duration-300"
+                            >
+                                <FaInstagram />
+                            </a>
 
-                        </header>
-                        <nav aria-label='Social media links'>
-                            <ul className='flex space-x-4'>
-                                {socialLinks.map((obj, index) => {
-                                    return (
-                                        <li key={index}>
-                                            <a href='#' className='bg-gray-800 hover:bg-blue-600 w-10 h-10 rounded-full flex items-center justify-center trasition'
-                                                aria-label={obj.label}>
-                                                {obj.icon}
-                                            </a>
-                                        </li>
-                                    );
-                                })}
-                            </ul>
-                        </nav>
-                    </section>
-                    <section>
-                        <h3 className="text-xl font-bold mb-6 relative pb-2 after:content[''] after:absolute after:left-0 after:bottom-0 after:w-12 after:h-1 after:bg-blue-500">
-                            Quick Links
+                            <a
+                                href="#"
+                                className="hover:text-blue-400 duration-300"
+                            >
+                                <FaLinkedin />
+                            </a>
+
+                            <a
+                                href="#"
+                                className="hover:text-blue-400 duration-300"
+                            >
+                                <FaYoutube />
+                            </a>
+
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 className="font-bold text-3xl mb-8">
+                            Solutions
                         </h3>
-                        <nav aria-label='Quick Links'>
-                            <ul className='space-y-3'>
-                                {quickLinks.map((obj, index) => {
-                                    return (
-                                        <li key={index}>
-                                            <a href={obj.href} className='text-gray-400 hover:text-blue-500 transition'>
-                                                {obj.text}
-                                            </a>
-                                        </li>
-                                    );
-                                })}
-                            </ul>
-                        </nav>
-                    </section>
-                    <address>
-                        <h3 className="text-xl font-bold mb-6 relative pb-2 after:content[''] after:absolute after:left-0 after:bottom-0 after:w-12 after:h-1 after:bg-blue-500">
-                            Contact Us
-                        </h3>
-                        <ul className='space-y-4'>
-                            {contactInfo.map((obj, index) => {
-                                return (
-                                    <li key={index} className='flex items-start'>
-                                        {obj.icon}
-                                        {obj.content}
-                                    </li>
-                                );
-                            })}
+
+                        <ul className="space-y-4">
+                            {solutions.map((item) => (
+                                <li key={item}>
+                                    <a
+                                        href="#"
+                                        className="text-[18px] text-gray-200 hover:text-white transition"
+                                    >
+                                        {item}
+                                    </a>
+                                </li>
+                            ))}
                         </ul>
-                    </address>
+                    </div>
+
+                    <div>
+                        <h3 className="font-bold text-3xl mb-8">
+                            Industries
+                        </h3>
+
+                        <ul className="space-y-4">
+                            {industries.map((item) => (
+                                <li key={item}>
+                                    <a
+                                        href="#"
+                                        className="text-[18px] text-gray-200 hover:text-white transition"
+                                    >
+                                        {item}
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 className="font-bold text-3xl mb-8">
+                            Institutional
+                        </h3>
+
+                        <ul className="space-y-4">
+                            {institutional.map((item) => (
+                                <li key={item}>
+                                    <a
+                                        href="#"
+                                        className="text-[18px] text-gray-200 hover:text-white transition"
+                                    >
+                                        {item}
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
                 </div>
             </div>
         </footer>
-    )
-}
+    );
+};
 
-export default Footer
+export default Footer;

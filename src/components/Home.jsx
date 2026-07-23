@@ -4,136 +4,85 @@ import "swiper/css/pagination";
 import { Autoplay, Pagination } from "swiper/modules";
 
 function Home() {
-    const status = [
-        { value: '100+', label: 'Happy Clients' },
-        { value: '150+', label: 'Services' },
-        { value: '80+', label: 'Projects' },
-        { value: '25+', label: 'Years' }
-    ];
 
     return (
-        <section id="home" className="relative  min-h-[90vh] flex items-center overflow-hidden bg-slate-50">
-
-            {/* Background */}
-            <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
-                <div className="absolute -top-[10%] -right-[10%] w-[500px] h-[500px] bg-blue-200/50 rounded-full blur-3xl animate-pulse"></div>
-                <div className="absolute top-[20%] -left-[5%] w-[400px] h-[400px] bg-purple-200/40 rounded-full blur-3xl"></div>
-            </div>
-
-            <article className="container mx-auto px-3 py-1 relative z-10">
-                <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-20">
-
-                    {/* LEFT CONTENT */}
-                    <div className="lg:w-[40%] text-left">
-
-                        <span className="inline-block px-4 py-1.5 mb-5 text-sm font-semibold text-blue-700 bg-blue-100 rounded-full border border-blue-200">
-                            Digital Transformation
-                        </span>
-
-                        <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 mb-5 leading-tight">
-                            Your Technology <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
-                                Partner for Growth
-                            </span>
-                        </h1>
-
-                        <p className="text-base md:text-lg text-slate-600 mb-8">
-                            We build smart automation, CCTV, AI, and software solutions to scale your business faster.
-                        </p>
-
-                        <div className="flex gap-3 mb-8">
-                            <a href="#services" className="px-5 py-2.5 bg-blue-600 text-white rounded-lg text-sm">
-                                Discover Services
-                            </a>
-                            <a href="#products" className="px-5 py-2.5 bg-gray-600 text-white rounded-lg text-sm">
-                                View Products
-                            </a>
-                        </div>
-
-                        {/* STATS */}
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                            {status.map((obj, i) => (
-                                <div key={i}>
-                                    <h3 className="text-xl font-bold text-blue-600">
-                                        {obj.value}
-                                    </h3>
-                                    <p className="text-xs text-gray-500">
-                                        {obj.label}
-                                    </p>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-
-                    {/* RIGHT SLIDER */}
-                    <div className="lg:w-[60%] w-full relative">
-
-                        {/* Background effect */}
-                        <div className="absolute inset-0 bg-gradient-to-tr from-blue-400 to-purple-400 rounded-[2rem] opacity-20 scale-105 animate-float-slow"></div>
-                        <div className="absolute inset-0 bg-gradient-to-bl from-indigo-400 to-cyan-400 rounded-[2rem] opacity-20 scale-110 animate-float-slower"></div>
-
-                        <div className="relative z-20">
-
-                            <Swiper
-                                modules={[Autoplay, Pagination]}
-                                autoplay={{ delay: 3000 }}
-                                pagination={{ clickable: true }}
-                                loop={true}
-                                className="rounded-[2rem] shadow-2xl border-4 border-white overflow-hidden"
-                            >
-
-                                {/* Slide Template */}
-                                {[
-                                    { img: "ai.png", title: "Artificial Intelligence", desc: "Smart AI solutions for automation & insights" },
-                                    { img: "auto.png", title: "Automation Systems", desc: "Transform workflows with intelligent automation" },
-                                    { img: "cctv.png", title: "CCTV Surveillance", desc: "Secure your business with advanced monitoring" },
-                                    { img: "chip.png", title: "Embedded Systems", desc: "Custom hardware & IoT solutions" },
-                                    { img: "software.png", title: "Software Development", desc: "Scalable & customized digital solutions" }
-                                ].map((slide, i) => (
-
-                                    <SwiperSlide key={i}>
-                                        <div className="relative w-full h-[260px] sm:h-[320px] md:h-[420px] lg:h-[600px]">
-
-                                            {/* ✅ FIXED IMAGE */}
-                                            <img
-                                                src={`/images/Home/${slide.img}`}
-                                                alt={slide.title}
-                                                className="w-full h-full object-contain md:object-cover bg-white"
-                                            />
-
-                                            {/* Gradient */}
-                                            <div className="absolute top-0 left-0 w-full h-28 bg-gradient-to-b from-white/90 to-transparent"></div>
-
-                                            {/* Text */}
-                                            <div className="absolute top-0 left-0 w-full p-4 md:p-6">
-                                                <h2 className="text-lg md:text-2xl font-bold text-blue-700">
+        <section id="home" className="relative min-h-[60vh] overflow-hidden bg-slate-50 sm:min-h-[70vh] lg:min-h-screen">
+            <article className="relative z-10 w-full">
+                <div className="relative w-full">
+                    <div className="relative z-10">
+                        <Swiper
+                            modules={[Autoplay, Pagination]}
+                            autoplay={{ delay: 10000 }}
+                            pagination={{
+                                clickable: true,
+                                renderBullet: (index, className) => `<span class="${className} swiper-pagination-bullet-custom"></span>`,
+                            }}
+                            loop={true}
+                            className="!pb-10 sm:!pb-12 lg:!pb-14"
+                        >
+                            {[
+                                { img: "4.png", title: "Stefanini Group", desc: "Reinforces its positioning as a global tech consultancy with an AI-first mindset", link: "https://www.stefanini.com/en-us/news/stefanini-reinforces-its-positioning-as-a-global-tech-consultancy-with-an-ai-first-mindset/" },
+                                { img: "3.png", title: "Stefanini Group", desc: "Global tech consulting with an AI-first focus to accelerate results", link: "https://www.stefanini.com/en-us/news/stefanini-reinforces-its-positioning-as-a-global-tech-consultancy-with-an-ai-first-mindset/" },
+                                { img: "2.png", title: "How Ford & Stefanini", desc: "Co-created a digital experience customers love", link: "https://www.stefanini.com/en-us/news/stefanini-reinforces-its-positioning-as-a-global-tech-consultancy-with-an-ai-first-mindset/" },
+                                { img: "1.png", title: "The Cost of Inaction", desc: "Modernize now or pay later", link: "https://www.stefanini.com/en-us/news/stefanini-reinforces-its-positioning-as-a-global-tech-consultancy-with-an-ai-first-mindset/" },
+                            ].map((slide, i) => (
+                                <SwiperSlide key={i}>
+                                    <div className="w-full overflow-hidden bg-white shadow-sm sm:bg-transparent sm:shadow-none">
+                                        <div className="relative ml-0 overflow-hidden rounded-[10px] sm:ml-0 sm:rounded-none sm:w-full aspect-[5/4] sm:aspect-[16/10] md:aspect-[16/8] lg:aspect-[16/7] xl:aspect-[16/6]">
+                                            <div className="mx-auto w-full sm:w-full">
+                                                <img
+                                                    src={`/images/Home/${slide.img}`}
+                                                    alt={slide.title}
+                                                    className="h-full w-full object-cover object-center"
+                                                />
+                                            </div>
+                                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent sm:bg-none" />
+                                            <div className="absolute bottom-4 left-3 right-3 max-w-3xl desktop-overlay md:bottom-6 md:left-6 md:right-6 lg:bottom-8 lg:left-8 lg:right-8 xl:bottom-10 xl:left-12 xl:right-12 2xl:left-20 2xl:right-20">
+                                                <h2 className="text-base font-bold leading-tight text-white sm:text-xl md:text-3xl lg:text-4xl xl:text-5xl">
                                                     {slide.title}
                                                 </h2>
-                                                <p className="text-xs md:text-sm text-blue-600">
+
+                                                <p className="mt-2 text-sm leading-relaxed text-white/95 sm:mt-3 sm:text-base md:mt-4 md:text-lg lg:text-xl">
                                                     {slide.desc}
                                                 </p>
+                                                <a
+                                                    href={slide.link}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="mt-3 inline-block rounded-lg bg-blue-600 px-3 py-2 text-sm font-medium text-white transition hover:bg-blue-700 sm:mt-4 sm:px-4 sm:py-2.5 sm:text-base md:mt-5 md:px-5 md:py-3"
+                                                >
+                                                    Read More
+                                                </a>
                                             </div>
-
                                         </div>
-                                    </SwiperSlide>
 
-                                ))}
-
-                            </Swiper>
-
-                            {/* Floating Card */}
-                            <div className="absolute -bottom-5 -left-5 bg-white p-3 rounded-xl shadow-lg hidden md:block z-30">
-                                <p className="font-bold text-green-600 text-sm">Trusted Products</p>
-                                <small className="text-gray-500 text-xs">High-quality solutions you can rely on</small>
-                            </div>
-
-                        </div>
+                                        <div className="absolute inset-x-0 bottom-0 mobile-overlay px-4 pb-4 pt-16">
+                                            <div className="rounded-[12px] border border-white/30 bg-gradient-to-r from-slate-900/85 via-slate-800/70 to-slate-700/80 p-4 shadow-lg backdrop-blur-sm">
+                                                <h2 className="text-lg font-semibold leading-tight text-white">
+                                                    {slide.title}
+                                                </h2>
+                                                <p className="mt-2 text-sm leading-relaxed text-slate-200">
+                                                    {slide.desc}
+                                                </p>
+                                                <a
+                                                    href={slide.link}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="mt-3 inline-flex rounded-lg bg-blue-600 px-3 py-2 text-sm font-medium text-white transition hover:bg-blue-700"
+                                                >
+                                                    Read More
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
                     </div>
-
                 </div>
             </article>
 
-            {/* Animations */}
+            {/* Animations and Pagination Styles */}
             <style jsx>{`
                 @keyframes floatSlow {
                     0% { transform: translateY(0); }
@@ -151,8 +100,52 @@ function Home() {
                 .animate-float-slower {
                     animation: floatSlower 12s ease-in-out infinite;
                 }
+                :global(.swiper-pagination) {
+                    bottom: 20px !important;
+                    right: 20px !important;
+                    left: auto !important;
+                    width: auto !important;
+                    display: flex !important;
+                    gap: 8px !important;
+                    align-items: center !important;
+                    padding: 8px 12px !important;
+                    background: rgba(255, 255, 255, 0.15) !important;
+                    backdrop-filter: blur(10px) !important;
+                    border-radius: 20px !important;
+                    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+                }
+                :global(.swiper-pagination-bullet) {
+                    width: 8px !important;
+                    height: 8px !important;
+                    border-radius: 50% !important;
+                    background: rgba(255, 255, 255, 0.4) !important;
+                    opacity: 1 !important;
+                    margin: 0 2px !important;
+                    transition: all 0.3s ease !important;
+                }
+                :global(.swiper-pagination-bullet-active) {
+                    background: #3b82f6 !important;
+                    width: 24px !important;
+                    border-radius: 4px !important;
+                }
+                /* 900px breakpoint: phone theme below, desktop theme above */
+                @media (min-width: 900px) {
+                    .desktop-overlay {
+                        display: block !important;
+                    }
+                    .mobile-overlay {
+                        display: none !important;
+                    }
+                }
+                @media (max-width: 899px) {
+                    .desktop-overlay {
+                        display: none !important;
+                    }
+                    .mobile-overlay {
+                        display: block !important;
+                    }
+                }
             `}</style>
-
         </section>
     );
 }

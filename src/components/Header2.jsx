@@ -21,23 +21,22 @@ import {
     ArrowLeft,
     Check,
 } from "lucide-react";
-import { solutionMenu } from "./SolutionData";
+import { solutionMenu } from "./Solutions/SolutionData";
 import { industriesMenu } from "./IndustriesData";
 import { insightsMenu } from "./InsightsData";
+import { Link } from "react-router-dom";
 
-export default function Header({ currentLang = "EN" }) {
+export default function Header({ currentLang = "EN" })  {
     const [open, setOpen] = useState(false);
     const [showMega, setShowMega] = useState(false);
     const [showIndustriesMega, setShowIndustriesMega] = useState(false);
     const [showInsightsMega, setShowInsightsMega] = useState(false);
     const [activeCategory, setActiveCategory] = useState(0);
 
-    // Language selector dropdown state
+    
     const [showLangDropdown, setShowLangDropdown] = useState(false);
-
-    // Mobile slide-out navigation states
-    const [mobileView, setMobileView] = useState("main"); // "main" | "solutions" | "industries" | "insights" | "lang"
-    // const [mobileActiveSolutionCat, setMobileActiveSolutionCat] = useState(0);
+    const [mobileView, setMobileView] = useState("main");
+    const [mobileActiveSolutionCat, setMobileActiveSolutionCat] = useState(0);
 
     const links = [
         { label: "Solutions", mega: true },
@@ -48,19 +47,17 @@ export default function Header({ currentLang = "EN" }) {
     ];
 
     const languages = [
-        { code: "EN", label: "ENGLISH" },
-        { code: "ES", label: "SPANISH" },
-        { code: "PT", label: "PORTUGUESE" },
+        { code: "EN", label: "EN" },
+        { code: "ES", label: "ES" },
+        { code: "PT", label: "PT" },
     ];
 
     const handleLanguageChange = (langCode) => {
         setShowLangDropdown(false);
         setOpen(false);
-        // Dispatch custom event to update global language state in App.jsx
         window.dispatchEvent(new CustomEvent("languageChange", { detail: langCode }));
     };
 
-    // Map industry titles to matching Lucide icons
     const getIndustryIcon = (title) => {
         switch (title) {
             case "Industrial Goods":
@@ -86,7 +83,6 @@ export default function Header({ currentLang = "EN" }) {
         }
     };
 
-    // Map insight titles to matching Lucide icons
     const getInsightIcon = (title) => {
         switch (title) {
             case "Library":
@@ -113,11 +109,9 @@ export default function Header({ currentLang = "EN" }) {
                     <img
                         src="/favicon.png"
                         alt=""
-                        className="h-20"
+                        className="h-18"
                     />
                 </a>
-
-                {/* Desktop Menu */}
 
                 <nav className="hidden lg:flex items-center gap-9">
 
@@ -132,16 +126,14 @@ export default function Header({ currentLang = "EN" }) {
                                 onMouseLeave={() => setShowMega(false)}
                             >
 
-                                <button className="flex items-center gap-1 font-medium text-black hover:text-blue-600 transition-colors">
+                                <button className="flex items-center gap-1 font-bold text-lg text-black hover:text-blue-600 transition-colors">
 
                                     {item.label}
 
                                     <ChevronDown size={17} />
 
                                 </button>
-
-                                {/* MEGA MENU */}
-
+                                {/* SOLUTIONS DROPDOWN WITH FEATURE CARDS AND CATEGORIES */}
                                 <div
                                     className={`absolute left-1/2 -translate-x-1/2 pt-6 transition-all duration-300 ${showMega
                                         ? "opacity-100 visible translate-y-0"
@@ -149,15 +141,13 @@ export default function Header({ currentLang = "EN" }) {
                                         }`}
                                 >
 
-                                    {/* Triangle */}
+                                    
 
                                     <div className="w-5 h-5 bg-white rotate-45 absolute top-3 left-[435px] shadow-sm border-l border-t"></div>
 
                                     <div className="w-[900px] max-w-[calc(100vw-2rem)] rounded-2xl bg-white shadow-2xl overflow-hidden border">
-
-                                        {/* ===================== */}
+                                        
                                         {/* FEATURE CARDS */}
-                                        {/* ===================== */}
 
                                         <div className="grid grid-cols-2 gap-4 p-4">
 
@@ -165,6 +155,7 @@ export default function Header({ currentLang = "EN" }) {
 
                                                 <div
                                                     key={i}
+                                                    href={card.link || "#"}
                                                     className="relative rounded-2xl overflow-hidden h-40 group cursor-pointer"
                                                 >
 
@@ -201,9 +192,6 @@ export default function Header({ currentLang = "EN" }) {
                                                 </div>
                                             ))}
                                         </div>
-                                        {/* ===================== */}
-                                        {/* LOWER AREA */}
-                                        {/* ===================== */}
                                         <div className="grid grid-cols-12">
                                             {/* LEFT */}
                                             <div className="col-span-3 bg-gray-50 border-r">
@@ -233,35 +221,27 @@ export default function Header({ currentLang = "EN" }) {
 
                                             </div>
 
-                                            {/* RIGHT */}
-
                                             <div className="col-span-9 p-6">
 
                                                 <div className="grid grid-cols-2 gap-x-8 gap-y-6">
 
                                                     {solutionMenu.categories[
-                                                        activeCategory
+                                                    activeCategory
                                                     ].items.map((subItem, i) => (
 
-                                                        <div
-                                                            key={i}
-                                                            className="group cursor-pointer"
-                                                        >
-
-                                                            <h3 className="text-xl font-semibold group-hover:text-blue-600 transition-colors">
-
-                                                                {subItem.title}
-
-                                                            </h3>
-
-                                                            <p className="mt-2 text-gray-600 text-sm leading-6">
-
-                                                                {subItem.desc}
-
-                                                            </p>
-
-                                                        </div>
-
+                                                    <Link
+                                                    key={i}
+                                                    to={subItem.link || "#"}
+                                                    onClick={() => setShowMega(false)}
+                                                    className="group cursor-pointer block"
+                                                    >
+                                                    <h3 className="text-xl font-semibold group-hover:text-blue-600 transition-colors">
+                                                    {subItem.title}
+                                                    </h3>
+                                                    <p className="mt-2 text-gray-600 text-sm leading-6">
+                                                    {subItem.desc}
+                                                    </p>
+                                                    </Link>
                                                     ))}
 
                                                 </div>
@@ -285,7 +265,7 @@ export default function Header({ currentLang = "EN" }) {
                                     onMouseLeave={() => setShowIndustriesMega(false)}
                                 >
 
-                                    <button className="flex items-center gap-1 font-medium text-black hover:text-blue-600 transition-colors">
+                                    <button className="flex items-center gap-1 font-bold text-lg text-black hover:text-blue-600 transition-colors">
 
                                         {item.label}
 
@@ -293,16 +273,12 @@ export default function Header({ currentLang = "EN" }) {
 
                                     </button>
 
-                                    {/* INDUSTRIES CLEAN GRID DROPDOWN WITH TRIANGLE */}
-
                                     <div
                                         className={`absolute left-1/2 -translate-x-1/2 pt-6 transition-all duration-300 ${showIndustriesMega
                                             ? "opacity-100 visible translate-y-0"
                                             : "opacity-0 invisible -translate-y-3"
                                             }`}
                                     >
-
-                                        {/* Triangle Indicator */}
 
                                         <div className="w-5 h-5 bg-white rotate-45 absolute top-3 left-[300px] shadow-sm border-l border-t"></div>
 
@@ -345,7 +321,7 @@ export default function Header({ currentLang = "EN" }) {
                                     onMouseLeave={() => setShowInsightsMega(false)}
                                 >
 
-                                    <button className="flex items-center gap-1 font-medium text-black hover:text-blue-600 transition-colors">
+                                    <button className="flex items-center gap-1 font-bold text-lg text-black hover:text-blue-600 transition-colors">
 
                                         {item.label}
 
@@ -353,16 +329,12 @@ export default function Header({ currentLang = "EN" }) {
 
                                     </button>
 
-                                    {/* INSIGHTS VERTICAL LIST DROPDOWN */}
-
                                     <div
                                         className={`absolute left-1/2 -translate-x-1/2 pt-6 transition-all duration-300 ${showInsightsMega
                                             ? "opacity-100 visible translate-y-0"
                                             : "opacity-0 invisible -translate-y-3"
                                             }`}
                                     >
-
-                                        {/* Triangle Indicator */}
 
                                         <div className="w-5 h-5 bg-white rotate-45 absolute top-3 left-[210px] shadow-sm border-l border-t"></div>
 
@@ -399,7 +371,7 @@ export default function Header({ currentLang = "EN" }) {
                             <a
                                 key={index}
                                 href="#"
-                                className="font-medium text-black hover:text-blue-600 transition-colors"
+                                className="flex items-center gap-1 font-bold text-lg text-black hover:text-blue-600 transition-colors"
                             >
 
                                 {item.label}
@@ -409,8 +381,6 @@ export default function Header({ currentLang = "EN" }) {
                     ))}
 
                 </nav>
-
-                {/* RIGHT */}
 
                 <div className="hidden lg:flex gap-3 items-center">
 
@@ -427,13 +397,12 @@ export default function Header({ currentLang = "EN" }) {
                             onClick={() => setShowLangDropdown(!showLangDropdown)}
                             className="flex items-center gap-1.5 px-3 py-2 border rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
                         >
-                            {/* Dynamically displays active language code */}
                             {currentLang}
                             <ChevronDown size={14} className={`transition-transform duration-200 ${showLangDropdown ? "rotate-180" : ""}`} />
                         </button>
 
                         {showLangDropdown && (
-                            <div className="absolute right-0 mt-2 w-36 bg-white rounded-xl shadow-xl border overflow-hidden py-1 z-50">
+                            <div className="absolute right-0 mt-2 w-32 bg-white rounded-xl shadow-xl border overflow-hidden py-1 z-50">
                                 {languages.map((lang) => (
                                     <button
                                         key={lang.code}
@@ -442,7 +411,7 @@ export default function Header({ currentLang = "EN" }) {
                                             currentLang === lang.code ? "font-bold text-blue-600 bg-blue-50/50" : "text-gray-700"
                                         }`}
                                     >
-                                        <span>{lang.code}</span>
+                                        <span>{lang.label}</span>
                                         {currentLang === lang.code && <Check size={14} className="text-blue-600" />}
                                     </button>
                                 ))}
@@ -458,7 +427,7 @@ export default function Header({ currentLang = "EN" }) {
                     className="lg:hidden flex h-10 w-10 items-center justify-center rounded-md text-gray-800 hover:bg-gray-100 hover:text-blue-600 transition-colors"
                     onClick={() => {
                         setOpen(!open);
-                        setMobileView("main"); // reset to main menu on toggle
+                        setMobileView("main");
                     }}
                     aria-label="Toggle menu"
                     aria-expanded={open}
@@ -466,12 +435,9 @@ export default function Header({ currentLang = "EN" }) {
                     {open ? <X size={22} /> : <Menu size={22} />}
                 </button>
             </div>
-
-            {/* MOBILE MENU */}
             <div className={`lg:hidden overflow-hidden border-t bg-white transition-all duration-300 ${open ? "max-h-[600px] opacity-100 overflow-y-auto" : "max-h-0 opacity-0"}`}>
                 <div className="px-4 py-3 space-y-1">
-
-                    {/* VIEW: MAIN MENU */}
+                    
                     {mobileView === "main" && (
                         <>
                             {links.map((item) => (
@@ -516,7 +482,105 @@ export default function Header({ currentLang = "EN" }) {
                         </>
                     )}
 
-                    {/* VIEW: LANGUAGE SELECTION SUB-MENU */}
+                    {mobileView === "solutions" && (
+                        <div className="space-y-1">
+                            <button
+                                onClick={() => setMobileView("main")}
+                                className="flex items-center gap-2 text-blue-600 font-bold px-4 py-3 text-sm hover:underline"
+                            >
+                                <ArrowLeft size={16} /> Voltar
+                            </button>
+                            
+                            <div className="font-bold text-gray-900 px-4 py-2 text-base">Solutions</div>
+                            
+                            <div className="space-y-1 pb-2">
+                                {solutionMenu.categories.map((cat, idx) => (
+                                    <button
+                                        key={idx}
+                                        onClick={() => setMobileActiveSolutionCat(idx)}
+                                        className={`w-full text-left px-4 py-2.5 rounded-lg text-sm  font-medium transition-colors ${
+                                            mobileActiveSolutionCat === idx ? "text-blue-600 bg-blue-50 font-bold" : "text-gray-700 hover:bg-gray-100"
+                                        }`}
+                                    >
+                                        {cat.title}
+                                    </button>
+                                ))}
+                            </div>
+
+                            <div className="border-t pt-3 space-y-3 bg-gray-50 p-4 rounded-xl">
+                                {solutionMenu.categories[mobileActiveSolutionCat]?.items?.map((sub, sIdx) => (
+                                    <a key={sIdx} href="#" className="block group">
+                                        <h4 className="font-bold text-gray-900 text-sm group-hover:text-blue-600 transition-colors">{sub.title}</h4>
+                                        <p className="text-gray-500 text-xs mt-0.5">{sub.desc}</p>
+                                    </a>
+                                ))}
+                            </div>
+                        </div>
+                    )}
+                    {mobileView === "industries" && (
+                        <div className="space-y-1">
+                            <button
+                                onClick={() => setMobileView("main")}
+                                className="flex items-center gap-2 text-blue-600 font-semibold px-4 py-3 text-sm hover:underline"
+                            >
+                                <ArrowLeft size={16} /> Voltar
+                            </button>
+
+                            <div className="font-bold text-gray-900 px-4 py-2 text-base">Industries</div>
+
+                            <div className="space-y-1">
+                                {industriesMenu?.categories.map((cat, idx) => (
+                                    <a
+                                        key={idx}
+                                        href="#"
+                                        className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-blue-50 group transition-colors"
+                                    >
+                                        <div className="p-2 rounded-lg bg-blue-50 group-hover:bg-blue-100 transition-colors">
+                                            {getIndustryIcon(cat.title)}
+                                        </div>
+                                        <span className="font-bold text-gray-900 text-sm group-hover:text-blue-600 transition-colors">
+                                            {cat.title}
+                                        </span>
+                                    </a>
+                                ))}
+                            </div>
+                        </div>
+                    )}
+                    {mobileView === "insights" && (
+                        <div className="space-y-1">
+                            <button
+                                onClick={() => setMobileView("main")}
+                                className="flex items-center gap-2 text-blue-600 font-semibold px-4 py-3 text-sm hover:underline"
+                            >
+                                <ArrowLeft size={16} /> Voltar
+                            </button>
+
+                            <div className="font-bold text-gray-900 px-4 py-2 text-base">Insights</div>
+
+                            <div className="space-y-2">
+                                {insightsMenu?.categories.map((cat, idx) => (
+                                    <a
+                                        key={idx}
+                                        href="#"
+                                        className="flex items-start gap-3 px-4 py-3 rounded-lg hover:bg-blue-50 group transition-colors"
+                                    >
+                                        <div className="p-2.5 rounded-xl bg-blue-50 group-hover:bg-blue-100 transition-colors shrink-0 mt-0.5">
+                                            {getInsightIcon(cat.title)}
+                                        </div>
+                                        <div>
+                                            <h4 className="font-bold text-gray-900 text-sm group-hover:text-blue-600 transition-colors">
+                                                {cat.title}
+                                            </h4>
+                                            <p className="text-gray-500 text-xs mt-0.5 leading-relaxed">
+                                                {cat.desc}
+                                            </p>
+                                        </div>
+                                    </a>
+                                ))}
+                            </div>
+                        </div>
+                    )}
+
                     {mobileView === "lang" && (
                         <div className="space-y-1">
                             <button

@@ -3,7 +3,7 @@ import { CheckCircle2 } from "lucide-react";
 import { toast } from "react-toastify";
 
 export default function Contact() {
-    const [step, setStep] = useState(1); // 1: Info, 2: Details, 3: Success
+    const [step, setStep] = useState(1); 
     const [loading, setLoading] = useState(false);
     const [formData, setFormData] = useState({
         email: "",
@@ -72,8 +72,6 @@ export default function Contact() {
         <section id="contact" className="py-16 lg:py-24 bg-white border-t border-gray-100 min-h-[85vh] flex items-center">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
                 <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
-                    
-                    {/* Left Side Text Content */}
                     <div className="lg:w-1/2 text-left space-y-4">
                         <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight">
                             Take the <span className="text-blue-600">next step</span> into the future.
@@ -82,12 +80,8 @@ export default function Contact() {
                             Talk to our team and find out how we can elevate your business.
                         </p>
                     </div>
-
-                    {/* Right Side Multi-Step Form */}
                     <div className="lg:w-1/2 w-full">
                         <div className="max-w-2xl mx-auto bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
-                            
-                            {/* Top Progress Bar */}
                             <div className="w-full bg-gray-100 h-1.5">
                                 <div
                                     className="bg-blue-600 h-1.5 transition-all duration-300"
@@ -96,7 +90,6 @@ export default function Contact() {
                             </div>
 
                             <div className="p-8 sm:p-10">
-                                {/* STEP 1: INITIAL INFORMATION */}
                                 {step === 1 && (
                                     <form onSubmit={handleNext} className="space-y-6">
                                         <div>
@@ -153,8 +146,6 @@ export default function Contact() {
                                         </div>
                                     </form>
                                 )}
-
-                                {/* STEP 2: USER DETAILS & MESSAGE */}
                                 {step === 2 && (
                                     <form onSubmit={handleNext} className="space-y-5">
                                         <div>
@@ -257,8 +248,6 @@ export default function Contact() {
                                         </div>
                                     </form>
                                 )}
-
-                                {/* STEP 3: SUCCESS CONFIRMATION */}
                                 {step === 3 && (
                                     <div className="text-center py-10 space-y-4">
                                         <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center mx-auto shadow-inner">

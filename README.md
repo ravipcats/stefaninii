@@ -15,7 +15,7 @@ A modern React recreation of the Stefanini corporate website, focusing on pixel-
 
 ---
 
-## 📖 About
+## About
 
 This project is a frontend recreation of the **Stefanini Group** website using **React**, **Vite**, and **Tailwind CSS**.
 
@@ -25,7 +25,7 @@ This repository serves as a frontend development showcase and learning project, 
 
 ---
 
-# ✨ Features
+# Features
 
 - Pixel-perfect UI recreation
 - Fully responsive design
@@ -49,7 +49,7 @@ This repository serves as a frontend development showcase and learning project, 
 
 ---
 
-# 🛠 Tech Stack
+# Tech Stack
 
 | Category         | Technology                |
 | ---------------- | ------------------------- |
@@ -67,7 +67,7 @@ This repository serves as a frontend development showcase and learning project, 
 
 ---
 
-# 📦 Dependencies
+# Dependencies
 
 ### Core
 
@@ -108,7 +108,7 @@ This repository serves as a frontend development showcase and learning project, 
 
 ---
 
-# 📂 Project Structure
+# Project Structure
 
 ```
 vectorwebsite/
@@ -134,7 +134,7 @@ vectorwebsite/
 
 ---
 
-# 🚀 Getting Started
+# Getting Started
 
 ## Clone Repository
 
@@ -168,7 +168,7 @@ http://localhost:5173
 
 ---
 
-# 📜 Available Scripts
+# Available Scripts
 
 ### Development
 
@@ -210,7 +210,7 @@ Checks the project using ESLint.
 
 ---
 
-# 📱 Responsive Design
+# Responsive Design
 
 The project is optimized for:
 
@@ -221,7 +221,7 @@ The project is optimized for:
 
 ---
 
-# 🎨 Major Components
+# Major Components
 
 - Header
 - Navigation
@@ -237,7 +237,7 @@ The project is optimized for:
 
 ---
 
-# 🎯 Project Goals
+# Project Goals
 
 - Learn enterprise frontend architecture
 - Build reusable React components
@@ -248,7 +248,7 @@ The project is optimized for:
 
 ---
 
-# 📸 Screenshots
+# Screenshots
 
 You can place screenshots inside:
 
@@ -280,7 +280,7 @@ Then display them:
 
 ---
 
-# 🔮 Future Improvements
+# Future Improvements
 
 - Dark Mode
 - Search Functionality
@@ -295,7 +295,7 @@ Then display them:
 
 ---
 
-# 🤝 Contributing
+# Contributing
 
 Contributions are welcome.
 
@@ -323,13 +323,13 @@ git push origin feature/new-feature
 
 ---
 
-# 📄 License
+# License
 
 This project is licensed under the **MIT License**.
 
 ---
 
-# ⚠ Disclaimer
+# Disclaimer
 
 This project is created **only for educational, learning, UI recreation, and portfolio purposes**.
 
@@ -341,7 +341,9 @@ This repository is **not affiliated with, sponsored by, endorsed by, or connecte
 
 # 👨‍💻 Developer
 
-### Ravi Kumar
+### Ravi Prakash Srivastava
+
+### Sintu Kumar
 
 Frontend Developer
 
@@ -353,7 +355,7 @@ https://github.com/ravipcats
 
 ---
 
-# ⭐ Show Your Support
+# Show Your Support
 
 If you found this project useful or inspiring, please consider giving it a **⭐ Star** on GitHub.
 

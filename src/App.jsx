@@ -7,22 +7,16 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 // Layout Components
-import Header from "./components/Header2"
-import Home from "./components/Home2"
-import Services from './components/Services';
-import Products from './components/Products';
-import Clients from './components/Clients';
-import About from './components/About';
-import Contact from './components/Contact';
-import Footer2 from './components/Footer2';
+import Header from "./components/Header"
+import Home from "./components/Home"
+import Footer from './components/Footer';
 import ScrollShowcase from './components/ScrollShowcase';
-// Detail Pages
-import ProductDetail from './components/ProductDetail';
-import ServiceDetail from './components/ServiceDetail'; // <--- 1. ADD THIS IMPORT
-import ClientStories from './components/ClientStories';
-import MultiStepForm from './components/MultiStepForm'; // <--- 1. ADD THIS IMPORT
+import Services from './components/Services';
 
-// Scroll to top and handle hash navigation
+import ClientStories from './components/ClientStories';
+import MultiStepForm from './components/MultiStepForm';
+
+
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
   const prevPathRef = useRef(null);
@@ -32,11 +26,10 @@ function ScrollToTop() {
     const isPathChange = prevPath !== pathname;
 
     if (pathname === '/' && isPathChange) {
-      // initial load or route change into home: always top and clear fragment
       window.history.replaceState(null, '', '/');
       window.scrollTo({ top: 0, behavior: 'auto' });
     } else if (hash) {
-      // In-page navigation, allowed to scroll to section
+
       setTimeout(() => {
         const element = document.querySelector(hash);
         if (element) {
@@ -72,16 +65,8 @@ function AppContent() {
       <ScrollShowcase />
       <ClientStories />
       <MultiStepForm />
-      <Footer2 />
-      <ChatBotWidget />
-      {/* <ClientStories /> */}
-
-      {/* <Products />
-      <Clients />
-      <About />
-      <Contact />
       <Footer />
-      <ToastContainer />  */}
+      <ChatBotWidget />
     </>
   )
 }
@@ -89,14 +74,10 @@ function AppContent() {
 function App() {
   return (
     <Router>
-      <ScrollToTop /> {/* <--- 2. ADD THIS TO FIX SCROLLING */}
+      <ScrollToTop />
       <AnimatePresence mode="wait">
         <Routes>
           <Route path="/" element={<AppContent />} />
-          <Route path="/product/:productId" element={<ProductDetail />} />
-
-          {/* 3. ADD THIS ROUTE FOR SERVICES */}
-          <Route path="/service/:serviceId" element={<ServiceDetail />} />
         </Routes>
       </AnimatePresence>
     </Router>

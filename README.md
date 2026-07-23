@@ -345,10 +345,6 @@ This repository is **not affiliated with, sponsored by, endorsed by, or connecte
 
 ### Sintu Kumar
 
-Frontend Developer
-
-📧 Email: sangeetasinha267@gmail.com _(replace with your own if desired)_
-
 🌐 GitHub
 
 https://github.com/ravipcats

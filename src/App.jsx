@@ -13,6 +13,10 @@ import Footer from './components/Footer';
 import ScrollShowcase from './components/ScrollShowcase';
 import Services from './components/Services';
 import ApplicationsSolutions from "./components/Solutions/ApplicationsSolutions";
+import CloudSolutions from "./components/Solutions/cloud";
+import DigitalWorkplaceSolutions from "./components/Solutions/digital-workplace-2";
+import EnterprisePlatformsSolutions from "./components/Solutions/enterprise-platforms-2";
+import HybridInfrastructureSolutions from "./components/Solutions/hybrid-infrastructure";
 import ClientStories from './components/ClientStories';
 import MultiStepForm from './components/MultiStepForm';
 
@@ -83,6 +87,25 @@ function App() {
             path="/solutions/applicationssolutions"
             element={<ApplicationsSolutions />}
           />
+          <Route
+    path="/solutions/cloud"
+    element={<CloudSolutions />}
+/>
+
+<Route
+    path="/solutions/digital-workplace-2"
+    element={<DigitalWorkplaceSolutions />}
+/>
+
+<Route
+    path="/solutions/enterprise-platforms-2"
+    element={<EnterprisePlatformsSolutions />}
+/>
+
+<Route
+    path="/solutions/hybrid-infrastructure"
+    element={<HybridInfrastructureSolutions />}
+/>
         </Routes>
       </AnimatePresence>
     </Router>

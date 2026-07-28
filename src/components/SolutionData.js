@@ -25,18 +25,22 @@ export const solutionMenu = {
         {
           title: "Hybrid Infrastructure",
           desc: "Complete cloud services, data centers and networking solutions.",
+          link: "/solutions/hybrid-infrastructure",
         },
         {
           title: "Cloud",
           desc: "Migration, optimization and cloud transformation services.",
+          link: "/solutions/cloud",
         },
         {
           title: "Digital Workplace Services",
           desc: "Integrated management, service desk and automation.",
+          link: "/solutions/digital-workplace-2",
         },
         {
           title: "Enterprise Platforms",
           desc: "Business platforms with AI and enterprise integrations.",
+          link: "/solutions/enterprise-platforms-2",
         },
       ],
     },

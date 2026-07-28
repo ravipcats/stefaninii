@@ -17,7 +17,11 @@ import ClientStories from './components/ClientStories';
 import MultiStepForm from './components/MultiStepForm';
 import Companies from './components/Companies/Companies';
 import FeaturedCompany from './components/FeaturedCompany/FeaturedCompany';
-
+import IndustrialGoods from './components/Industries/IndustrialGoods';
+import ConsumerServices from './components/Industries/ConsumerServices';
+import ConsumerGoods from './components/Industries/ConsumerGoods';
+import NaturalResources from './components/Industries/NaturalResources';
+import FinancialServices from './components/Industries/FinancialServices';
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -62,6 +66,7 @@ function AppContent() {
   return (
     <>
       <Header />
+
       <Home />
       <FeaturedCompany />
       <Companies />
@@ -82,11 +87,12 @@ function App() {
       <AnimatePresence mode="wait">
         <Routes>
           <Route path="/" element={<AppContent />} />
-
-          <Route
-            path="/solutions/applicationssolutions"
-            element={<ApplicationsSolutions />}
-          />
+          <Route path="/solutions/applicationssolutions" element={<ApplicationsSolutions />} />
+          <Route path="/industries/industrialgoods" element={<IndustrialGoods />} />
+          <Route path="/industries/consumerservices" element={<ConsumerServices />} />
+          <Route path="/industries/consumergoods" element={<ConsumerGoods />} />
+          <Route path="/industries/naturalresources" element={<NaturalResources />} />
+          <Route path="/industries/financialservices" element={<FinancialServices />} />
         </Routes>
       </AnimatePresence>
     </Router>

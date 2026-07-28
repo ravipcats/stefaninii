@@ -12,7 +12,7 @@ import Home from "./components/Home"
 import Footer from './components/Footer';
 import ScrollShowcase from './components/ScrollShowcase';
 import Services from './components/Services';
-
+import ApplicationsSolutions from "./components/Solutions/ApplicationsSolutions";
 import ClientStories from './components/ClientStories';
 import MultiStepForm from './components/MultiStepForm';
 
@@ -78,10 +78,15 @@ function App() {
       <AnimatePresence mode="wait">
         <Routes>
           <Route path="/" element={<AppContent />} />
+
+          <Route
+            path="/solutions/applicationssolutions"
+            element={<ApplicationsSolutions />}
+          />
         </Routes>
       </AnimatePresence>
     </Router>
-  )
+  );
 }
 
 export default App;

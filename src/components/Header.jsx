@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState }   from "react";
 import {
     ChevronDown,
     Sparkles,
@@ -21,7 +21,7 @@ import {
     ArrowLeft,
     Check,
 } from "lucide-react";
-import { solutionMenu } from "./Solutions/SolutionData";
+import { solutionMenu } from "./SolutionData";
 import { industriesMenu } from "./IndustriesData";
 import { insightsMenu } from "./InsightsData";
 import { Link } from "react-router-dom";

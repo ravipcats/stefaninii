@@ -23,8 +23,8 @@ export default function Solutions({
             </div>
 
             {/* HERO SECTION */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-8 py-12 lg:py-16">
-                <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+            <section className="max-w-7xl mx-auto px-6 sm:px-8 py-12 lg:py-16">
+                <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
                     
                     {/* Left Title & CTA */}
                     <div className="lg:w-1/2 space-y-6 text-left">
@@ -51,9 +51,9 @@ export default function Solutions({
                     <div className="lg:w-1/2 w-full">
                         <div className="rounded-2xl overflow-hidden shadow-2xl border border-gray-100 bg-slate-100">
                             <img
-                                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200"
+                                src="https://stefanini.com/wp-content/uploads/2025/12/BANNER-1_640X447-18.jpg"
                                 alt="Team collaborating on applications"
-                                className="w-full h-auto object-cover aspect-[16/10]"
+                                className="w-full h-auto object-cover aspect-[18/13]"
                             />
                         </div>
                     </div>
@@ -65,7 +65,7 @@ export default function Solutions({
             <section className="max-w-7xl mx-auto px-4 sm:px-8 mb-12">
                 <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-100 max-h-[350px]">
                     <img
-                        src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1400"
+                        src="https://stefanini.com/wp-content/uploads/2025/12/BANNER-2_1304X217-1.jpg"
                         alt="Coding on laptop screen"
                         className="w-full h-full object-cover object-center"
                     />

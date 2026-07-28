@@ -6,7 +6,15 @@ import ImageStrip from "./ImageStrip";
 import Navigation from "./Navigation";
 import "./styles.css";
 
-export default function ClientStories() {
+export default function ClientStories({
+    title = (
+        <>
+            Get to know Stefanini through
+            <br />
+            our clients.
+        </>
+    ),
+}) {
     const [activeIndex, setActiveIndex] = useState(1);
     const total = clientStories.length;
 
@@ -29,9 +37,7 @@ export default function ClientStories() {
             <div className="client-stories-inner">
                 <header className="client-stories-header">
                     <h5 className="client-stories-title">
-                        Get to know Stefanini through
-                        <br />
-                        our clients.
+                        {title}
                     </h5>
                 </header>
 

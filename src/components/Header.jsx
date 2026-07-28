@@ -1,4 +1,4 @@
-import React, { useState }   from "react";
+import React, { useState } from "react";
 import {
     ChevronDown,
     Sparkles,
@@ -26,14 +26,14 @@ import { industriesMenu } from "./IndustriesData";
 import { insightsMenu } from "./InsightsData";
 import { Link } from "react-router-dom";
 
-export default function Header({ currentLang = "EN" })  {
+export default function Header({ currentLang = "EN" }) {
     const [open, setOpen] = useState(false);
     const [showMega, setShowMega] = useState(false);
     const [showIndustriesMega, setShowIndustriesMega] = useState(false);
     const [showInsightsMega, setShowInsightsMega] = useState(false);
     const [activeCategory, setActiveCategory] = useState(0);
 
-    
+
     const [showLangDropdown, setShowLangDropdown] = useState(false);
     const [mobileView, setMobileView] = useState("main");
     const [mobileActiveSolutionCat, setMobileActiveSolutionCat] = useState(0);
@@ -141,12 +141,12 @@ export default function Header({ currentLang = "EN" })  {
                                         }`}
                                 >
 
-                                    
+
 
                                     <div className="w-5 h-5 bg-white rotate-45 absolute top-3 left-[435px] shadow-sm border-l border-t"></div>
 
                                     <div className="w-[900px] max-w-[calc(100vw-2rem)] rounded-2xl bg-white shadow-2xl overflow-hidden border">
-                                        
+
                                         {/* FEATURE CARDS */}
 
                                         <div className="grid grid-cols-2 gap-4 p-4">
@@ -226,22 +226,22 @@ export default function Header({ currentLang = "EN" })  {
                                                 <div className="grid grid-cols-2 gap-x-8 gap-y-6">
 
                                                     {solutionMenu.categories[
-                                                    activeCategory
+                                                        activeCategory
                                                     ].items.map((subItem, i) => (
 
-                                                    <Link
-                                                    key={i}
-                                                    to={subItem.link || "#"}
-                                                    onClick={() => setShowMega(false)}
-                                                    className="group cursor-pointer block"
-                                                    >
-                                                    <h3 className="text-xl font-semibold group-hover:text-blue-600 transition-colors">
-                                                    {subItem.title}
-                                                    </h3>
-                                                    <p className="mt-2 text-gray-600 text-sm leading-6">
-                                                    {subItem.desc}
-                                                    </p>
-                                                    </Link>
+                                                        <Link
+                                                            key={i}
+                                                            to={subItem.link || "#"}
+                                                            onClick={() => setShowMega(false)}
+                                                            className="group cursor-pointer block"
+                                                        >
+                                                            <h3 className="text-xl font-semibold group-hover:text-blue-600 transition-colors">
+                                                                {subItem.title}
+                                                            </h3>
+                                                            <p className="mt-2 text-gray-600 text-sm leading-6">
+                                                                {subItem.desc}
+                                                            </p>
+                                                        </Link>
                                                     ))}
 
                                                 </div>
@@ -289,7 +289,7 @@ export default function Header({ currentLang = "EN" })  {
                                                 {industriesMenu?.categories.map((cat, catIndex) => (
                                                     <a
                                                         key={catIndex}
-                                                        href="#"
+                                                        href={cat.link}
                                                         className="flex items-center justify-between p-3 rounded-xl hover:bg-blue-50/60 group transition-colors"
                                                     >
                                                         <div className="flex items-center gap-3">
@@ -312,71 +312,71 @@ export default function Header({ currentLang = "EN" })  {
 
                                 </div>
 
-                            : item.label === "Insights" ?
-
-                                <div
-                                    key={index}
-                                    className="relative"
-                                    onMouseEnter={() => setShowInsightsMega(true)}
-                                    onMouseLeave={() => setShowInsightsMega(false)}
-                                >
-
-                                    <button className="flex items-center gap-1 font-bold text-lg text-black hover:text-blue-600 transition-colors">
-
-                                        {item.label}
-
-                                        <ChevronDown size={17} />
-
-                                    </button>
+                                : item.label === "Insights" ?
 
                                     <div
-                                        className={`absolute left-1/2 -translate-x-1/2 pt-6 transition-all duration-300 ${showInsightsMega
-                                            ? "opacity-100 visible translate-y-0"
-                                            : "opacity-0 invisible -translate-y-3"
-                                            }`}
+                                        key={index}
+                                        className="relative"
+                                        onMouseEnter={() => setShowInsightsMega(true)}
+                                        onMouseLeave={() => setShowInsightsMega(false)}
                                     >
 
-                                        <div className="w-5 h-5 bg-white rotate-45 absolute top-3 left-[210px] shadow-sm border-l border-t"></div>
+                                        <button className="flex items-center gap-1 font-bold text-lg text-black hover:text-blue-600 transition-colors">
 
-                                        <div className="w-[480px] rounded-2xl bg-white shadow-2xl p-4 border space-y-2">
+                                            {item.label}
 
-                                            {insightsMenu?.categories.map((cat, catIndex) => (
-                                                <a
-                                                    key={catIndex}
-                                                    href="#"
-                                                    className="flex items-start gap-4 p-3 rounded-xl hover:bg-blue-50/60 group transition-colors"
-                                                >
-                                                    <div className="p-2.5 rounded-xl bg-blue-50 group-hover:bg-blue-100 transition-colors shrink-0 mt-0.5">
-                                                        {getInsightIcon(cat.title)}
-                                                    </div>
-                                                    <div>
-                                                        <h4 className="font-bold text-gray-900 text-base group-hover:text-blue-600 transition-colors">
-                                                            {cat.title}
-                                                        </h4>
-                                                        <p className="text-gray-500 text-sm mt-0.5 leading-relaxed">
-                                                            {cat.desc}
-                                                        </p>
-                                                    </div>
-                                                </a>
-                                            ))}
+                                            <ChevronDown size={17} />
+
+                                        </button>
+
+                                        <div
+                                            className={`absolute left-1/2 -translate-x-1/2 pt-6 transition-all duration-300 ${showInsightsMega
+                                                ? "opacity-100 visible translate-y-0"
+                                                : "opacity-0 invisible -translate-y-3"
+                                                }`}
+                                        >
+
+                                            <div className="w-5 h-5 bg-white rotate-45 absolute top-3 left-[210px] shadow-sm border-l border-t"></div>
+
+                                            <div className="w-[480px] rounded-2xl bg-white shadow-2xl p-4 border space-y-2">
+
+                                                {insightsMenu?.categories.map((cat, catIndex) => (
+                                                    <a
+                                                        key={catIndex}
+                                                        href={cat.link}
+                                                        className="flex items-start gap-4 p-3 rounded-xl hover:bg-blue-50/60 group transition-colors"
+                                                    >
+                                                        <div className="p-2.5 rounded-xl bg-blue-50 group-hover:bg-blue-100 transition-colors shrink-0 mt-0.5">
+                                                            {getInsightIcon(cat.title)}
+                                                        </div>
+                                                        <div>
+                                                            <h4 className="font-bold text-gray-900 text-base group-hover:text-blue-600 transition-colors">
+                                                                {cat.title}
+                                                            </h4>
+                                                            <p className="text-gray-500 text-sm mt-0.5 leading-relaxed">
+                                                                {cat.desc}
+                                                            </p>
+                                                        </div>
+                                                    </a>
+                                                ))}
+
+                                            </div>
 
                                         </div>
 
                                     </div>
 
-                                </div>
+                                    :
 
-                            :
+                                    <a
+                                        key={index}
+                                        href="#"
+                                        className="flex items-center gap-1 font-bold text-lg text-black hover:text-blue-600 transition-colors"
+                                    >
 
-                            <a
-                                key={index}
-                                href="#"
-                                className="flex items-center gap-1 font-bold text-lg text-black hover:text-blue-600 transition-colors"
-                            >
+                                        {item.label}
 
-                                {item.label}
-
-                            </a>
+                                    </a>
 
                     ))}
 
@@ -407,9 +407,8 @@ export default function Header({ currentLang = "EN" })  {
                                     <button
                                         key={lang.code}
                                         onClick={() => handleLanguageChange(lang.code)}
-                                        className={`w-full flex items-center justify-between px-4 py-2 text-sm text-left hover:bg-blue-50 hover:text-blue-600 transition-colors ${
-                                            currentLang === lang.code ? "font-bold text-blue-600 bg-blue-50/50" : "text-gray-700"
-                                        }`}
+                                        className={`w-full flex items-center justify-between px-4 py-2 text-sm text-left hover:bg-blue-50 hover:text-blue-600 transition-colors ${currentLang === lang.code ? "font-bold text-blue-600 bg-blue-50/50" : "text-gray-700"
+                                            }`}
                                     >
                                         <span>{lang.label}</span>
                                         {currentLang === lang.code && <Check size={14} className="text-blue-600" />}
@@ -437,7 +436,7 @@ export default function Header({ currentLang = "EN" })  {
             </div>
             <div className={`lg:hidden overflow-hidden border-t bg-white transition-all duration-300 ${open ? "max-h-[600px] opacity-100 overflow-y-auto" : "max-h-0 opacity-0"}`}>
                 <div className="px-4 py-3 space-y-1">
-                    
+
                     {mobileView === "main" && (
                         <>
                             {links.map((item) => (
@@ -490,17 +489,16 @@ export default function Header({ currentLang = "EN" })  {
                             >
                                 <ArrowLeft size={16} /> Voltar
                             </button>
-                            
+
                             <div className="font-bold text-gray-900 px-4 py-2 text-base">Solutions</div>
-                            
+
                             <div className="space-y-1 pb-2">
                                 {solutionMenu.categories.map((cat, idx) => (
                                     <button
                                         key={idx}
                                         onClick={() => setMobileActiveSolutionCat(idx)}
-                                        className={`w-full text-left px-4 py-2.5 rounded-lg text-sm  font-medium transition-colors ${
-                                            mobileActiveSolutionCat === idx ? "text-blue-600 bg-blue-50 font-bold" : "text-gray-700 hover:bg-gray-100"
-                                        }`}
+                                        className={`w-full text-left px-4 py-2.5 rounded-lg text-sm  font-medium transition-colors ${mobileActiveSolutionCat === idx ? "text-blue-600 bg-blue-50 font-bold" : "text-gray-700 hover:bg-gray-100"
+                                            }`}
                                     >
                                         {cat.title}
                                     </button>
@@ -597,9 +595,8 @@ export default function Header({ currentLang = "EN" })  {
                                     <button
                                         key={lang.code}
                                         onClick={() => handleLanguageChange(lang.code)}
-                                        className={`w-full flex items-center justify-between px-4 py-3 rounded-lg text-sm transition-colors ${
-                                            currentLang === lang.code ? "font-bold text-blue-600 bg-blue-50" : "text-gray-700 hover:bg-gray-100"
-                                        }`}
+                                        className={`w-full flex items-center justify-between px-4 py-3 rounded-lg text-sm transition-colors ${currentLang === lang.code ? "font-bold text-blue-600 bg-blue-50" : "text-gray-700 hover:bg-gray-100"
+                                            }`}
                                     >
                                         <span>{lang.label} ({lang.code})</span>
                                         {currentLang === lang.code && <Check size={16} className="text-blue-600" />}

@@ -16,6 +16,7 @@ import ApplicationsSolutions from "./components/Solutions/ApplicationsSolutions"
 import ClientStories from './components/ClientStories';
 import MultiStepForm from './components/MultiStepForm';
 import Companies from './components/Companies/Companies';
+import FeaturedCompany from './components/FeaturedCompany/FeaturedCompany';
 
 
 function ScrollToTop() {
@@ -62,6 +63,7 @@ function AppContent() {
     <>
       <Header />
       <Home />
+      <FeaturedCompany />
       <Companies />
       <Services />
       <ScrollShowcase />

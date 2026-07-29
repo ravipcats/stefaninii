@@ -19,8 +19,6 @@ import EnterprisePlatformsSolutions from "./components/Solutions/enterprise-plat
 import HybridInfrastructureSolutions from "./components/Solutions/hybrid-infrastructure";
 import ClientStories from './components/ClientStories';
 import MultiStepForm from './components/MultiStepForm';
-import Companies from './components/Companies/Companies';
-import FeaturedCompany from './components/FeaturedCompany/FeaturedCompany';
 import IndustrialGoods from './components/Industries/IndustrialGoods';
 import ConsumerServices from './components/Industries/ConsumerServices';
 import ConsumerGoods from './components/Industries/ConsumerGoods';
@@ -84,8 +82,6 @@ function AppContent() {
       <Header />
 
       <Home />
-      <FeaturedCompany />
-      <Companies />
       <Services />
       <ScrollShowcase />
       <ClientStories />
@@ -109,24 +105,24 @@ function App() {
             element={<ApplicationsSolutions />}
           />
           <Route
-    path="/solutions/cloud"
-    element={<CloudSolutions />}
-/>
+            path="/solutions/cloud"
+            element={<CloudSolutions />}
+          />
 
-<Route
-    path="/solutions/digital-workplace-2"
-    element={<DigitalWorkplaceSolutions />}
-/>
+          <Route
+            path="/solutions/digital-workplace-2"
+            element={<DigitalWorkplaceSolutions />}
+          />
 
-<Route
-    path="/solutions/enterprise-platforms-2"
-    element={<EnterprisePlatformsSolutions />}
-/>
+          <Route
+            path="/solutions/enterprise-platforms-2"
+            element={<EnterprisePlatformsSolutions />}
+          />
 
-<Route
-    path="/solutions/hybrid-infrastructure"
-    element={<HybridInfrastructureSolutions />}
-/>
+          <Route
+            path="/solutions/hybrid-infrastructure"
+            element={<HybridInfrastructureSolutions />}
+          />
           <Route path="/solutions/applicationssolutions" element={<ApplicationsSolutions />} />
           <Route path="/industries/industrialgoods" element={<IndustrialGoods />} />
           <Route path="/industries/consumerservices" element={<ConsumerServices />} />

@@ -29,6 +29,15 @@ import FinancialServices from './components/Industries/FinancialServices';
 import Operations from "./components/Solutions/Operations";
 import DataAnalytics from "./components/Solutions/data-analytics-2";
 import Manufacturing2 from "./components/Solutions/manufacturing-2";
+import Telecom from './components/Industries/Telecom';
+import HealthAndLifeSciences from './components/Industries/HealthAndLifeSciences';
+import PublicAndSocialSector from './components/Industries/PublicAndSocialSector';
+import RetailIndustry from './components/Industries/RetailIndustry';
+
+import Newsroom from './components/Insights/NewsRoom/Newsroom';
+import One from './components/Insights/NewsRoom/Articles/One';
+import Two from './components/Insights/NewsRoom/Articles/Two';
+import Three from './components/Insights/NewsRoom/Articles/Three';
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -127,6 +136,14 @@ function App() {
           <Route path="/solutions/operations" element={<Operations />} />
           <Route path="/solutions/data-analytics-2" element={<DataAnalytics />} />
           <Route path="/solutions/manufacturing-2" element={<Manufacturing2 />} />
+          <Route path="/industries/telecom" element={<Telecom />} />
+          <Route path="/industries/healthandlifesciences" element={<HealthAndLifeSciences />} />
+          <Route path="/industries/publicandsocialsector" element={<PublicAndSocialSector />} />
+          <Route path="/industries/retailindustry" element={<RetailIndustry />} />
+          <Route path="/newsroom" element={<Newsroom />} />
+          <Route path="/news/one" element={<One />} />
+          <Route path="/news/Two" element={<Two />} />
+          <Route path="/news/Three" element={<Three />} />
         </Routes>
       </AnimatePresence>
     </Router>

@@ -1,0 +1,74 @@
+/* ==========================================
+   NEWSROOM
+========================================== */
+
+.newsroom-section {
+    background: #fff;
+}
+
+.newsroom-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
+}
+
+.newsroom-card img {
+    transition: transform .6s ease;
+}
+
+.newsroom-card:hover img {
+    transform: scale(1.08);
+}
+
+.newsroom-card h3 {
+    transition: color .3s ease;
+}
+
+.newsroom-card:hover h3 {
+    color: #0068d7;
+}
+
+.newsroom-filter {
+    position: relative;
+}
+
+.newsroom-dropdown {
+    animation: dropdown .25s ease;
+}
+
+@keyframes dropdown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.newsroom-loadmore {
+    transition: all .3s ease;
+}
+
+.newsroom-loadmore:hover {
+    transform: translateY(-3px);
+}
+
+@media (max-width:1200px) {
+
+    .newsroom-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width:768px) {
+
+    .newsroom-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+}

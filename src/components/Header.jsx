@@ -24,7 +24,7 @@ import {
 import { solutionMenu } from "./SolutionData";
 import { industriesMenu } from "./IndustriesData";
 import { insightsMenu } from "./InsightsData";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 
 export default function Header({ currentLang = "EN" }) {
     const [open, setOpen] = useState(false);
@@ -32,6 +32,7 @@ export default function Header({ currentLang = "EN" }) {
     const [showIndustriesMega, setShowIndustriesMega] = useState(false);
     const [showInsightsMega, setShowInsightsMega] = useState(false);
     const [activeCategory, setActiveCategory] = useState(0);
+    const navigate = useNavigate();
 
 
     const [showLangDropdown, setShowLangDropdown] = useState(false);
@@ -200,6 +201,13 @@ export default function Header({ currentLang = "EN" }) {
 
                                                     <button
                                                         key={index}
+                                                        onClick={() => {
+                                                        setActiveCategory(index);
+                                                        if (cat.link) {
+                                                        setShowMega(false); // Close dropdown
+                                                        navigate(cat.link); // Redirect to route
+                                                        }
+                                                        }}
                                                         onMouseEnter={() =>
                                                             setActiveCategory(index)
                                                         }

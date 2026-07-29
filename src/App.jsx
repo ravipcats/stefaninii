@@ -26,6 +26,9 @@ import ConsumerServices from './components/Industries/ConsumerServices';
 import ConsumerGoods from './components/Industries/ConsumerGoods';
 import NaturalResources from './components/Industries/NaturalResources';
 import FinancialServices from './components/Industries/FinancialServices';
+import Operations from "./components/Solutions/Operations";
+import DataAnalytics from "./components/Solutions/data-analytics-2";
+import Manufacturing2 from "./components/Solutions/manufacturing-2";
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -121,6 +124,9 @@ function App() {
           <Route path="/industries/consumergoods" element={<ConsumerGoods />} />
           <Route path="/industries/naturalresources" element={<NaturalResources />} />
           <Route path="/industries/financialservices" element={<FinancialServices />} />
+          <Route path="/solutions/operations" element={<Operations />} />
+          <Route path="/solutions/data-analytics-2" element={<DataAnalytics />} />
+          <Route path="/solutions/manufacturing-2" element={<Manufacturing2 />} />
         </Routes>
       </AnimatePresence>
     </Router>

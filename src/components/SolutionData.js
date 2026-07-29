@@ -48,16 +48,18 @@ export const solutionMenu = {
     {
       title: "Operations",
       items: [],
+      link: "/solutions/operations",
     },
 
     {
       title: "Data & Analytics",
       items: [],
+      link: "/solutions/data-analytics-2",
     },
 
     {
       title: "Manufacturing",
-      items: [],
+      items: "/solutions/manufacturing-2",
     },
 
     {

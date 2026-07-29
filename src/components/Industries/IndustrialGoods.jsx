@@ -5,7 +5,7 @@ import industrialHeroImage from "../../assets/Industries/industrial-hero.png";
 import industriesGoodImage from "../../assets/Industries/IndustriesGood.png";
 
 import Header from "../Header";
-import Solutions from "../Solutions";
+import Solutions from "../Solution";
 import Services from "../Services";
 import ScrollShowcase from "../ScrollShowcase";
 import ClientStories from "../ClientStories";

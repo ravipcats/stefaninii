@@ -24,6 +24,7 @@ import {
 import { solutionMenu } from "./SolutionData";
 import { industriesMenu } from "./IndustriesData";
 import { insightsMenu } from "./InsightsData";
+import { stefaniniMenu } from "./StefaniniHeaderData";
 import { Link,useNavigate } from "react-router-dom";
 
 export default function Header({ currentLang = "EN" }) {
@@ -31,6 +32,7 @@ export default function Header({ currentLang = "EN" }) {
     const [showMega, setShowMega] = useState(false);
     const [showIndustriesMega, setShowIndustriesMega] = useState(false);
     const [showInsightsMega, setShowInsightsMega] = useState(false);
+    const [showStefaniniMega, setShowStefaniniMega] = useState(false);
     const [activeCategory, setActiveCategory] = useState(0);
     const navigate = useNavigate();
 
@@ -43,7 +45,7 @@ export default function Header({ currentLang = "EN" }) {
         { label: "Solutions", mega: true },
         { label: "Industries", mega: true },
         { label: "Insights", mega: true },
-        { label: "Stefanini" },
+        { label: "Stefanini",mega:true },
         { label: "Careers" },
     ];
 
@@ -374,6 +376,60 @@ export default function Header({ currentLang = "EN" }) {
 
                                     </div>
 
+                                    : item.label === "Stefanini" ?
+
+                                    <div
+                                        key={index}
+                                        className="relative"
+                                        onMouseEnter={() => setShowStefaniniMega(true)}
+                                        onMouseLeave={() => setShowStefaniniMega(false)}
+                                    >
+
+                                        <button className="flex items-center gap-1 font-bold text-lg text-black hover:text-blue-600 transition-colors">
+
+                                            {item.label}
+
+                                            <ChevronDown size={17} />
+
+                                        </button>
+
+                                        <div
+                                            className={`absolute left-1/2 -translate-x-1/2 pt-6 transition-all duration-300 ${showStefaniniMega
+                                                ? "opacity-100 visible translate-y-0"
+                                                : "opacity-0 invisible -translate-y-3"
+                                                }`}
+                                        >
+
+                                            <div className="w-5 h-5 bg-white rotate-45 absolute top-3 left-[210px] shadow-sm border-l border-t"></div>
+
+                                            <div className="w-[480px] rounded-2xl bg-white shadow-2xl p-4 border space-y-2">
+
+                                                {stefaniniMenu?.categories.map((cat, catIndex) => (
+                                                    <a
+                                                        key={catIndex}
+                                                        href={cat.link}
+                                                        className="flex items-start gap-4 p-3 rounded-xl hover:bg-blue-50/60 group transition-colors"
+                                                    >
+                                                        <div className="p-2.5 rounded-xl bg-blue-50 group-hover:bg-blue-100 transition-colors shrink-0 mt-0.5">
+                                                            {getInsightIcon(cat.title)}
+                                                        </div>
+                                                        <div>
+                                                            <h4 className="font-bold text-gray-900 text-base group-hover:text-blue-600 transition-colors">
+                                                                {cat.title}
+                                                            </h4>
+                                                            <p className="text-gray-500 text-sm mt-0.5 leading-relaxed">
+                                                                {cat.desc}
+                                                            </p>
+                                                        </div>
+                                                    </a>
+                                                ))}
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
                                     :
 
                                     <a
@@ -385,6 +441,7 @@ export default function Header({ currentLang = "EN" }) {
                                         {item.label}
 
                                     </a>
+                                    
 
                     ))}
 

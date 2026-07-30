@@ -20,7 +20,7 @@ import HybridInfrastructureSolutions from "./components/Solutions/hybrid-infrast
 import ClientStories from './components/ClientStories';
 import MultiStepForm from './components/MultiStepForm';
 import Companies from './components/Companies/Companies';
-import FeaturedCompany from './components/FeaturedCompany/FeaturedCompany';
+import FeaturedCompany from './components/Topaz/topaz';
 import IndustrialGoods from './components/Industries/IndustrialGoods';
 import ConsumerServices from './components/Industries/ConsumerServices';
 import ConsumerGoods from './components/Industries/ConsumerGoods';
@@ -29,6 +29,9 @@ import FinancialServices from './components/Industries/FinancialServices';
 import Operations from "./components/Solutions/Operations";
 import DataAnalytics from "./components/Solutions/data-analytics-2";
 import Manufacturing2 from "./components/Solutions/manufacturing-2";
+import Marketing2 from "./components/Solutions/marketing-2";
+import CyberSecurity2 from "./components/Solutions/cybersecurity-2";
+import Stefanini from "./components/Stefanini/stefanini"
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -127,6 +130,10 @@ function App() {
           <Route path="/solutions/operations" element={<Operations />} />
           <Route path="/solutions/data-analytics-2" element={<DataAnalytics />} />
           <Route path="/solutions/manufacturing-2" element={<Manufacturing2 />} />
+          <Route path="/solutions/marketing-2" element={<Marketing2 />} />
+          <Route path="/solutions/cybersecurity-2" element={<CyberSecurity2 />} />
+          <Route path="/solutions/topaz-2" element={<FeaturedCompany />} />
+          <Route path="/Stefanini/stefanini" element={<Stefanini />} />
         </Routes>
       </AnimatePresence>
     </Router>

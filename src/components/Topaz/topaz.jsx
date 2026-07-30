@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { FiExternalLink } from "react-icons/fi";
-import featuredCompany from "./featuredCompanyData";
+import featuredCompany from "./TopazData";
 
 export default function FeaturedCompany() {
     return (

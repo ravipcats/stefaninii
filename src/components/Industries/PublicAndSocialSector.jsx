@@ -3,7 +3,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 import Header from "../Header";
-import Solutions from "../Solutions";
+
 import Services from "../Services";
 import ScrollShowcase from "../ScrollShowcase";
 import ClientStories from "../ClientStories";

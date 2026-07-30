@@ -1,0 +1,93 @@
+.contact-card {
+
+    position: sticky;
+
+    top: 110px;
+
+    background: #fff;
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .08);
+
+}
+
+.apply-btn {
+
+    width: 100%;
+
+    height: 56px;
+
+    border: none;
+
+    background: #0068D7;
+
+    color: #fff;
+
+    border-radius: 12px;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    margin-bottom: 30px;
+
+    cursor: pointer;
+
+}
+
+.apply-btn:hover {
+
+    background: #0056b8;
+
+}
+
+.contact-section {
+
+    margin-bottom: 25px;
+
+}
+
+.contact-section h3 {
+
+    margin-bottom: 10px;
+
+}
+
+.contact-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 18px;
+
+    color: #555;
+
+}
+
+.salary-box {
+
+    margin-top: 30px;
+
+    display: flex;
+
+    gap: 15px;
+
+    background: #f7f9fc;
+
+    padding: 20px;
+
+    border-radius: 14px;
+
+}
+
+.salary-box h4 {
+
+    color: #0068D7;
+
+}

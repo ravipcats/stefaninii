@@ -1,0 +1,134 @@
+.job-table-wrapper {
+
+    background: #fff;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .08);
+
+}
+
+.job-table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+}
+
+.job-table thead {
+
+    background: #0068D7;
+
+    color: #fff;
+
+}
+
+.job-table th {
+
+    padding: 18px;
+
+    text-align: left;
+
+}
+
+.job-table td {
+
+    padding: 18px;
+
+    border-bottom: 1px solid #eee;
+
+}
+
+.job-table tbody tr:hover {
+
+    background: #f7fbff;
+
+}
+
+.edit-btn {
+
+    width: 38px;
+
+    height: 38px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #0068D7;
+
+    color: #fff;
+
+    margin-right: 10px;
+
+    cursor: pointer;
+
+}
+
+.delete-btn {
+
+    width: 38px;
+
+    height: 38px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #e53935;
+
+    color: #fff;
+
+    cursor: pointer;
+
+}
+
+.action-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.no-data {
+    text-align: center;
+    padding: 60px;
+    color: #777;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.edit-btn,
+.delete-btn {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.edit-btn {
+    background: #0068D7;
+    color: #fff;
+}
+
+.edit-btn:hover {
+    background: #0053ad;
+    transform: translateY(-2px);
+}
+
+.delete-btn {
+    background: #e53935;
+    color: #fff;
+}
+
+.delete-btn:hover {
+    background: #c62828;
+    transform: translateY(-2px);
+}

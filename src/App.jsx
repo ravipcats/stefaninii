@@ -1,10 +1,12 @@
 import { useEffect, useRef } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import AOS from 'aos'
 import 'aos/dist/aos.css';
-import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { initializeJobs } from "./utils/storage";
 
 // Layout Components
 import Header from "./components/Header"
@@ -32,6 +34,11 @@ import HealthAndLifeSciences from './components/Industries/HealthAndLifeSciences
 import PublicAndSocialSector from './components/Industries/PublicAndSocialSector';
 import RetailIndustry from './components/Industries/RetailIndustry';
 
+import Careers from "./pages/Careers/Careers";
+import CareerDetails from "./pages/Careers/CareerDetails";
+import Login from "./pages/Admin/Login";
+import Dashboard from "./pages/Admin/Dashboard";
+
 import Newsroom from './components/Insights/NewsRoom/Newsroom';
 import One from './components/Insights/NewsRoom/Articles/One';
 import Two from './components/Insights/NewsRoom/Articles/Two';
@@ -44,7 +51,7 @@ function ScrollToTop() {
   useEffect(() => {
     const prevPath = prevPathRef.current;
     const isPathChange = prevPath !== pathname;
-
+    initializeJobs();
     if (pathname === '/' && isPathChange) {
       window.history.replaceState(null, '', '/');
       window.scrollTo({ top: 0, behavior: 'auto' });
@@ -136,12 +143,19 @@ function App() {
           <Route path="/industries/healthandlifesciences" element={<HealthAndLifeSciences />} />
           <Route path="/industries/publicandsocialsector" element={<PublicAndSocialSector />} />
           <Route path="/industries/retailindustry" element={<RetailIndustry />} />
+
+          <Route path="/careers" element={<Careers />} />
+          <Route path="/careers/:id" element={<CareerDetails />} />
+          <Route path="/admin/login" element={<Login />} />
+          <Route path="/admin/dashboard" element={<Dashboard />} />
+
           <Route path="/newsroom" element={<Newsroom />} />
           <Route path="/news/one" element={<One />} />
           <Route path="/news/Two" element={<Two />} />
           <Route path="/news/Three" element={<Three />} />
         </Routes>
       </AnimatePresence>
+      <ToastContainer position="top-right" autoClose={2500} />
     </Router>
   );
 }

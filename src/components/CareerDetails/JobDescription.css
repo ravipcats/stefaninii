@@ -1,0 +1,37 @@
+.job-description {
+
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 40px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, .08);
+
+}
+
+.job-description h2 {
+
+    margin: 30px 0 20px;
+
+}
+
+.job-description p {
+
+    line-height: 1.8;
+
+    color: #555;
+
+}
+
+.job-description ul {
+
+    padding-left: 20px;
+
+}
+
+.job-description li {
+
+    margin-bottom: 12px;
+
+}

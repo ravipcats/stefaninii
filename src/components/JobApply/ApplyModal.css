@@ -1,0 +1,276 @@
+.apply-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.apply-modal {
+    width: 600px;
+    max-width: 95%;
+    background: #fff;
+    border-radius: 16px;
+    padding: 30px;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    border: none;
+    background: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.job-info {
+    margin: 20px 0;
+}
+
+.apply-modal input,
+.apply-modal textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.apply-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.apply-actions button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* ===========================
+   Overlay
+=========================== */
+
+.apply-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .65);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+}
+
+/* ===========================
+   Modal
+=========================== */
+
+.apply-modal {
+    width: min(650px, 92%);
+    background: #fff !important;
+    border-radius: 20px;
+    padding: 35px;
+    position: relative;
+    animation: popup .3s ease;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, .25);
+}
+
+@keyframes popup {
+
+    from {
+        transform: translateY(25px) scale(.95);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+
+}
+
+/* ===========================
+   Close
+=========================== */
+
+.close-btn {
+    position: absolute;
+    right: 18px;
+    top: 18px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background: #f3f4f6;
+    color: #333 !important;
+    font-size: 24px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.close-btn:hover {
+    background: #0068d7;
+    color: #fff !important;
+}
+
+/* ===========================
+   Heading
+=========================== */
+
+.apply-modal h2 {
+    margin: 0;
+    color: #111 !important;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.job-info {
+    margin: 18px 0 30px;
+    padding: 18px;
+    background: #f5f8ff;
+    border-left: 5px solid #0068d7;
+    border-radius: 10px;
+}
+
+.job-info h3 {
+    margin: 0 0 10px;
+    color: #0068d7 !important;
+    font-size: 22px;
+}
+
+.job-info p {
+    margin: 6px 0;
+    color: #666 !important;
+    font-size: 15px;
+}
+
+/* ===========================
+   Inputs
+=========================== */
+
+.apply-modal input,
+.apply-modal textarea {
+
+    width: 100%;
+    padding: 14px 18px;
+    margin-bottom: 18px;
+
+    border: 1px solid #d7d7d7;
+
+    border-radius: 10px;
+
+    background: #fff !important;
+
+    color: #222 !important;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition: .25s;
+
+    box-sizing: border-box;
+
+}
+
+.apply-modal input::placeholder,
+.apply-modal textarea::placeholder {
+
+    color: #888 !important;
+
+}
+
+.apply-modal input:focus,
+.apply-modal textarea:focus {
+
+    border-color: #0068d7;
+
+    box-shadow: 0 0 0 4px rgba(0, 104, 215, .12);
+
+}
+
+/* ===========================
+   Buttons
+=========================== */
+
+.apply-actions {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 15px;
+
+    margin-top: 15px;
+
+}
+
+.apply-actions button {
+
+    padding: 13px 28px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    transition: .25s;
+
+}
+
+.apply-actions button:first-child {
+
+    background: #ececec !important;
+
+    color: #333 !important;
+
+}
+
+.apply-actions button:first-child:hover {
+
+    background: #ddd !important;
+
+}
+
+.apply-actions button:last-child {
+
+    background: #0068d7 !important;
+
+    color: #fff !important;
+
+}
+
+.apply-actions button:last-child:hover {
+
+    background: #0054af !important;
+
+}
+
+/* ===========================
+   Mobile
+=========================== */
+
+@media(max-width:768px) {
+
+    .apply-modal {
+
+        width: 95%;
+
+        padding: 25px;
+
+    }
+
+}

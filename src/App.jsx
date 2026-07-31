@@ -1,10 +1,12 @@
 import { useEffect, useRef } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import AOS from 'aos'
 import 'aos/dist/aos.css';
-import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { initializeJobs } from "./utils/storage";
 
 // Layout Components
 import Header from "./components/Header"
@@ -32,6 +34,20 @@ import Manufacturing2 from "./components/Solutions/manufacturing-2";
 import Marketing2 from "./components/Solutions/marketing-2";
 import CyberSecurity2 from "./components/Solutions/cybersecurity-2";
 import Stefanini from "./components/Stefanini/stefanini"
+import Telecom from './components/Industries/Telecom';
+import HealthAndLifeSciences from './components/Industries/HealthAndLifeSciences';
+import PublicAndSocialSector from './components/Industries/PublicAndSocialSector';
+import RetailIndustry from './components/Industries/RetailIndustry';
+
+import Careers from "./pages/Careers/Careers";
+import CareerDetails from "./pages/Careers/CareerDetails";
+import Login from "./pages/Admin/Login";
+import Dashboard from "./pages/Admin/Dashboard";
+
+import Newsroom from './components/Insights/NewsRoom/Newsroom';
+import One from './components/Insights/NewsRoom/Articles/One';
+import Two from './components/Insights/NewsRoom/Articles/Two';
+import Three from './components/Insights/NewsRoom/Articles/Three';
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -40,7 +56,7 @@ function ScrollToTop() {
   useEffect(() => {
     const prevPath = prevPathRef.current;
     const isPathChange = prevPath !== pathname;
-
+    initializeJobs();
     if (pathname === '/' && isPathChange) {
       window.history.replaceState(null, '', '/');
       window.scrollTo({ top: 0, behavior: 'auto' });
@@ -78,8 +94,6 @@ function AppContent() {
       <Header />
 
       <Home />
-      <FeaturedCompany />
-      <Companies />
       <Services />
       <ScrollShowcase />
       <ClientStories />
@@ -103,24 +117,24 @@ function App() {
             element={<ApplicationsSolutions />}
           />
           <Route
-    path="/solutions/cloud"
-    element={<CloudSolutions />}
-/>
+            path="/solutions/cloud"
+            element={<CloudSolutions />}
+          />
 
-<Route
-    path="/solutions/digital-workplace-2"
-    element={<DigitalWorkplaceSolutions />}
-/>
+          <Route
+            path="/solutions/digital-workplace-2"
+            element={<DigitalWorkplaceSolutions />}
+          />
 
-<Route
-    path="/solutions/enterprise-platforms-2"
-    element={<EnterprisePlatformsSolutions />}
-/>
+          <Route
+            path="/solutions/enterprise-platforms-2"
+            element={<EnterprisePlatformsSolutions />}
+          />
 
-<Route
-    path="/solutions/hybrid-infrastructure"
-    element={<HybridInfrastructureSolutions />}
-/>
+          <Route
+            path="/solutions/hybrid-infrastructure"
+            element={<HybridInfrastructureSolutions />}
+          />
           <Route path="/solutions/applicationssolutions" element={<ApplicationsSolutions />} />
           <Route path="/industries/industrialgoods" element={<IndustrialGoods />} />
           <Route path="/industries/consumerservices" element={<ConsumerServices />} />
@@ -134,8 +148,23 @@ function App() {
           <Route path="/solutions/cybersecurity-2" element={<CyberSecurity2 />} />
           <Route path="/solutions/topaz-2" element={<FeaturedCompany />} />
           <Route path="/Stefanini/stefanini" element={<Stefanini />} />
+          <Route path="/industries/telecom" element={<Telecom />} />
+          <Route path="/industries/healthandlifesciences" element={<HealthAndLifeSciences />} />
+          <Route path="/industries/publicandsocialsector" element={<PublicAndSocialSector />} />
+          <Route path="/industries/retailindustry" element={<RetailIndustry />} />
+
+          <Route path="/careers" element={<Careers />} />
+          <Route path="/careers/:id" element={<CareerDetails />} />
+          <Route path="/admin/login" element={<Login />} />
+          <Route path="/admin/dashboard" element={<Dashboard />} />
+
+          <Route path="/newsroom" element={<Newsroom />} />
+          <Route path="/news/one" element={<One />} />
+          <Route path="/news/Two" element={<Two />} />
+          <Route path="/news/Three" element={<Three />} />
         </Routes>
       </AnimatePresence>
+      <ToastContainer position="top-right" autoClose={2500} />
     </Router>
   );
 }

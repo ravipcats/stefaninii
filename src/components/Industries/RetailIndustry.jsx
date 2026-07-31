@@ -12,10 +12,10 @@ import ChatBotWidget from "../ChatBotWidget";
 import IndustryOverview from "./IndustryOverview";
 import IndustryHero from "./IndustryHero";
 import PageSectionNav from "./PageSectionNav";
-import naturalResourcesImage from "../../assets/Industries/NaturalResources.png";
-import naturalResourcesHero from "../../assets/Industries/NaturalResources-hero.png";
+import retail from "../../assets/Industries/Retail.png";
+import retailhero from "../../assets/Industries/Retail-hero.png";
 
-export default function NaturalResources() {
+export default function RetailIndustry() {
     useEffect(() => {
         AOS.init({
             duration: 1000,
@@ -28,18 +28,18 @@ export default function NaturalResources() {
         <>
             <Header />
             <PageSectionNav
-                title="Natural Resources Industry"
+                title="Public and Social Sector Industry"
             />
             <IndustryHero
                 title={
                     <>
-                        Natural Resources
+                        Retail
                         <br />
                         Industry
                     </>
                 }
-                description="The Natural Resources sector faces sustainability, infrastructure, and price‑volatility headwinds. We apply AI, IoT, and data analytics to boost productivity, cut costs, and scale sustainable operations, driving efficiency and innovation."
-                image={naturalResourcesImage}
+                description="The retail sector faces competition, fraud, and changing consumer habits. Stefanini uses AI, IoT, and analytics to optimize operations, create secure and innovative experiences, increase efficiency, and strengthen retail competitiveness."
+                image={retail}
                 buttonText="Talk to an expert"
                 onButtonClick={() =>
                     document
@@ -51,29 +51,31 @@ export default function NaturalResources() {
                 <Services />
             </section>
             <IndustryOverview
-                title="Transforming Natural Resources with Efficiency, Sustainability, and Technological Innovation"
+                title="Digital Solutions for More Agile and Connected Retail"
 
-                introLeft="Digital transformation in the Natural Resources sector is essential to increase operational efficiency, reduce environmental impact, and ensure safer, more resilient, and sustainable operations. With advanced technologies, we help companies integrate data, people, and assets in increasingly complex environments."
+                introLeft="The retail industry faces growing challenges, such as the expansion of e-commerce, the pressure for seamless omnichannel experiences, and increasingly demanding consumers. To remain competitive, it is essential to respond with agility to changes in behavior and new market demands..
 
-                introRight="By combining automation, advanced analytics, IoT, and artificial intelligence, we drive productivity, optimize the use of natural resources, and support data-driven strategic decisions, accelerating the transition to more sustainable and innovative operating models."
+                Society experiences simple and personalized digital"
 
-                image={naturalResourcesHero}
+                introRight="With more complex supply chains and intense global competition, continuous innovation becomes a strategic differentiator. Stefanini supports retailers in the adoption of technologies that optimize operations, create great customer experiences, and strengthen the connection with the consumer at all points of contact."
+
+                image={retailhero}
 
                 features={[
                     {
-                        title: "Efficiency at scale",
+                        title: "Omnichannel experience",
                         description:
-                            "Automation, predictive maintenance, and real-time monitoring reduce costs, failures, and unplanned downtime.",
+                            "We create fluid, personalized, and consistent journeys that connect physical and digital channels, ensuring a unified experience across all consumer touchpoints.",
                     },
                     {
-                        title: "Environmental compliance",
+                        title: "Operational and logistics efficiency",
                         description:
-                            "Digital technologies monitor impact, reduce waste, optimize energy consumption, and meet regulatory requirements.",
+                            "We apply smart technologies to reduce disruptions, delays, and costs in the supply chain, increasing predictability, agility, and operational efficiency.",
                     },
                     {
                         title: "Data-driven innovation",
                         description:
-                            "AI, analytics, and integrated platforms for more accurate forecasting, agile decision-making, and greater long-term competitiveness.",
+                            "We use AI, advanced analytics, and automation to support real-time decisions, drive continuous innovation, and ensure sustainable growth in retail.",
                     },
                 ]}
             />

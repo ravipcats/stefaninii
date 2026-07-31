@@ -1,0 +1,93 @@
+/* ==========================================
+   JOB REQUIREMENTS
+========================================== */
+
+.job-requirements {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+    margin-top: 35px;
+}
+
+.job-requirements h2 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+.job-requirements h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 70px;
+    height: 4px;
+    background: #0068d7;
+    border-radius: 50px;
+}
+
+.job-requirements ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.job-requirements li {
+    position: relative;
+    padding: 14px 0 14px 38px;
+    font-size: 16px;
+    color: #4b5563;
+    line-height: 1.8;
+    border-bottom: 1px solid #edf2f7;
+}
+
+.job-requirements li:last-child {
+    border-bottom: none;
+}
+
+.job-requirements li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 14px;
+    width: 24px;
+    height: 24px;
+    background: #0068d7;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+@media (max-width: 992px) {
+    .job-requirements {
+        padding: 30px;
+    }
+
+    .job-requirements h2 {
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 576px) {
+    .job-requirements {
+        padding: 24px;
+        border-radius: 16px;
+    }
+
+    .job-requirements h2 {
+        font-size: 22px;
+    }
+
+    .job-requirements li {
+        font-size: 15px;
+        padding-left: 34px;
+    }
+}

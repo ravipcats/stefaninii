@@ -1,0 +1,75 @@
+.career-details-layout {
+
+    width: min(1300px, 90%);
+
+    margin: 70px auto;
+
+    display: grid;
+
+    grid-template-columns: 2fr 380px;
+
+    gap: 40px;
+
+    align-items: start;
+
+}
+
+.career-main {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 35px;
+
+}
+
+@media(max-width:1100px) {
+
+    .career-details-layout {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+/* Force readable text */
+
+.career-details-layout,
+.career-details-layout * {
+    color: #222;
+}
+
+.job-description,
+.job-description * {
+    color: #333;
+}
+
+.job-requirements,
+.job-requirements * {
+    color: #333;
+}
+
+.about-company,
+.about-company * {
+    color: #333;
+}
+
+.contact-card,
+.contact-card * {
+    color: #333;
+}
+
+.contact-card .apply-btn {
+    color: #fff;
+}
+
+.salary-box h4 {
+    color: #0068d7;
+}
+
+.job-overview-card h3,
+.job-overview-card p,
+.job-overview-card span {
+    color: #333;
+}

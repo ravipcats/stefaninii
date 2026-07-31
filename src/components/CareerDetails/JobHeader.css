@@ -1,0 +1,35 @@
+.job-header {
+
+    background: linear-gradient(135deg, #0057c2, #0085ff);
+
+    color: white;
+
+    padding: 90px 0;
+
+}
+
+.job-header-container {
+
+    width: min(1200px, 90%);
+
+    margin: auto;
+
+}
+
+.job-header h1 {
+
+    font-size: 52px;
+
+    margin: 20px 0;
+
+    line-height: 1.2;
+
+}
+
+.job-header p {
+
+    font-size: 20px;
+
+    opacity: .9;
+
+}

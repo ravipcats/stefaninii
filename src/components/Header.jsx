@@ -46,7 +46,7 @@ export default function Header({ currentLang = "EN" }) {
         { label: "Industries", mega: true },
         { label: "Insights", mega: true },
         { label: "Stefanini",mega:true },
-        { label: "Careers" },
+        { label: "Careers", mega: true, link: "/careers" },
     ];
 
     const languages = [
@@ -204,11 +204,11 @@ export default function Header({ currentLang = "EN" }) {
                                                     <button
                                                         key={index}
                                                         onClick={() => {
-                                                        setActiveCategory(index);
-                                                        if (cat.link) {
-                                                        setShowMega(false); // Close dropdown
-                                                        navigate(cat.link); // Redirect to route
-                                                        }
+                                                            setActiveCategory(index);
+                                                            if (cat.link) {
+                                                                setShowMega(false); // Close dropdown
+                                                                navigate(cat.link); // Redirect to route
+                                                            }
                                                         }}
                                                         onMouseEnter={() =>
                                                             setActiveCategory(index)
@@ -438,7 +438,22 @@ export default function Header({ currentLang = "EN" }) {
                                         className="flex items-center gap-1 font-bold text-lg text-black hover:text-blue-600 transition-colors"
                                     >
 
-                                        {item.label}
+                                        {item.link ? (
+                                            <Link
+                                                key={index}
+                                                to={item.link}
+                                                className="flex items-center gap-1 font-bold text-lg text-black hover:text-blue-600 transition-colors"
+                                            >
+                                                {item.label}
+                                            </Link>
+                                        ) : (
+                                            <button
+                                                key={index}
+                                                className="flex items-center gap-1 font-bold text-lg text-black hover:text-blue-600 transition-colors"
+                                            >
+                                                {item.label}
+                                            </button>
+                                        )}
 
                                     </a>
                                     

@@ -8,6 +8,7 @@ export const stefaniniMenu = {
     {
       title: "Late's Make It Happen",
       desc: "Find out how we turn business challenges into resultes.",
+      link: "/stefanini/lets-make-it-happen",
     },
   ],
 };

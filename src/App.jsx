@@ -34,6 +34,7 @@ import Manufacturing2 from "./components/Solutions/manufacturing-2";
 import Marketing2 from "./components/Solutions/marketing-2";
 import CyberSecurity2 from "./components/Solutions/cybersecurity-2";
 import Stefanini from "./components/Stefanini/stefanini"
+import LetsmakeItshappen from "./components/Stefanini/lets-make-it-happen"
 import Telecom from './components/Industries/Telecom';
 import HealthAndLifeSciences from './components/Industries/HealthAndLifeSciences';
 import PublicAndSocialSector from './components/Industries/PublicAndSocialSector';
@@ -48,6 +49,7 @@ import Newsroom from './components/Insights/NewsRoom/Newsroom';
 import One from './components/Insights/NewsRoom/Articles/One';
 import Two from './components/Insights/NewsRoom/Articles/Two';
 import Three from './components/Insights/NewsRoom/Articles/Three';
+
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -148,6 +150,7 @@ function App() {
           <Route path="/solutions/cybersecurity-2" element={<CyberSecurity2 />} />
           <Route path="/solutions/topaz-2" element={<FeaturedCompany />} />
           <Route path="/Stefanini/stefanini" element={<Stefanini />} />
+          <Route path="/Stefanini/lets-make-it-happen" element={<LetsmakeItshappen />} />
           <Route path="/industries/telecom" element={<Telecom />} />
           <Route path="/industries/healthandlifesciences" element={<HealthAndLifeSciences />} />
           <Route path="/industries/publicandsocialsector" element={<PublicAndSocialSector />} />

@@ -1,0 +1,73 @@
+/* ==========================================
+   CASE STUDY CONTENT
+========================================== */
+
+.case-study-section {
+    background: #fff;
+    padding: 56px 0;
+}
+
+.case-study-content {
+    width: min(760px, 92%);
+    margin: 0 auto;
+}
+
+/* Heading */
+
+.case-study-content h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-align: center;
+    color: #001f5b;
+    margin-bottom: 42px;
+    letter-spacing: .5px;
+}
+
+/* Paragraphs */
+
+.case-study-content p {
+    font-size: 1.5rem;
+    line-height: 1.9;
+    color: #222;
+    margin-bottom: 18px;
+}
+
+/* Bullet list */
+
+.case-study-content ul {
+    margin-top: 12px;
+    padding-left: 24px;
+}
+
+.case-study-content li {
+    font-size: 1.125rem;
+    line-height: 1.9;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+/* Mobile */
+
+@media (max-width:768px) {
+
+    .case-study-section {
+        padding: 40px 0;
+    }
+
+    .case-study-content {
+        width: 92%;
+    }
+
+    .case-study-content h2 {
+        font-size: 1.6rem;
+        margin-bottom: 28px;
+    }
+
+    .case-study-content p,
+    .case-study-content li {
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+
+}

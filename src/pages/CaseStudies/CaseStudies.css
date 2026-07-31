@@ -1,0 +1,25 @@
+.case-studies-page {
+
+    background: #ffffff;
+
+    min-height: 100vh;
+
+}
+
+.case-filter-bar {
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 20px;
+
+    margin: 50px auto;
+
+    flex-wrap: wrap;
+
+}

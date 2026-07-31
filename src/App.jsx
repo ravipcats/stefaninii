@@ -44,6 +44,22 @@ import One from './components/Insights/NewsRoom/Articles/One';
 import Two from './components/Insights/NewsRoom/Articles/Two';
 import Three from './components/Insights/NewsRoom/Articles/Three';
 
+
+import CaseStudies from './pages/CaseStudies/CaseStudies';
+import CaseStudyDetails from './pages/CaseStudies/CaseStudyDetails';
+
+import CaseOne from "./components/CaseStudyDetails/CaseStudy/One";
+import CaseTwo from "./components/CaseStudyDetails/CaseStudy/Two";
+import CaseThree from "./components/CaseStudyDetails/CaseStudy/Three";
+
+import CaseFour from "./components/CaseStudyDetails/CaseStudy/Four";
+import CaseFive from "./components/CaseStudyDetails/CaseStudy/Five";
+import CaseSix from "./components/CaseStudyDetails/CaseStudy/Six";
+
+import CaseSeven from "./components/CaseStudyDetails/CaseStudy/Seven";
+import CaseEight from "./components/CaseStudyDetails/CaseStudy/Eight";
+import CaseNine from "./components/CaseStudyDetails/CaseStudy/Nine";
+
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
   const prevPathRef = useRef(null);
@@ -153,6 +169,22 @@ function App() {
           <Route path="/news/one" element={<One />} />
           <Route path="/news/Two" element={<Two />} />
           <Route path="/news/Three" element={<Three />} />
+
+          <Route path="/case-studies" element={<CaseStudies />} />
+          <Route path="/case-study/:slug" element={<CaseStudyDetails />} />
+
+          <Route path="/case-study/one" element={<CaseOne />} />
+          <Route path="/case-study/two" element={<CaseTwo />} />
+          <Route path="/case-study/three" element={<CaseThree />} />
+
+          <Route path="/case-study/four" element={<CaseFour />} />
+          <Route path="/case-study/five" element={<CaseFive />} />
+          <Route path="/case-study/six" element={<CaseSix />} />
+
+          <Route path="/case-study/seven" element={<CaseSeven />} />
+          <Route path="/case-study/eight" element={<CaseEight />} />
+          <Route path="/case-study/nine" element={<CaseNine />} />
+
         </Routes>
       </AnimatePresence>
       <ToastContainer position="top-right" autoClose={2500} />

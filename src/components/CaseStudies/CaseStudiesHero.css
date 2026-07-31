@@ -1,11 +1,12 @@
 .case-hero {
 
-    height: 550px;
+    min-height: 220px;
+    height: 28vh;
+    max-height: 260px;
+    background: #000;
 
     background-size: cover;
-
-    background-position: center;
-
+    background-position: center center;
     position: relative;
 
 }

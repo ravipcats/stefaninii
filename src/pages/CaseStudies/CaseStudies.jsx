@@ -4,7 +4,10 @@ import CaseStudiesHero from "../../components/CaseStudies/CaseStudiesHero";
 import DropdownFilter from "../../components/CaseStudies/DropdownFilter";
 import CaseStudyGrid from "../../components/CaseStudies/CaseStudyGrid";
 import caseStudies from "../../data/caseStudiesData";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 import "./CaseStudies.css";
+import { TbBackground } from "react-icons/tb";
 
 export default function CaseStudies() {
 
@@ -63,7 +66,9 @@ export default function CaseStudies() {
     return (
 
         <>
+            <Header />
             <div className="case-studies-page">
+
                 <CaseStudiesHero />
 
                 <div className="case-filter-bar">
@@ -100,6 +105,7 @@ export default function CaseStudies() {
 
                 />
             </div>
+            <Footer />
         </>
 
     );

@@ -59,17 +59,30 @@ export const solutionMenu = {
 
     {
       title: "Manufacturing",
-      items: "/solutions/manufacturing-2",
+      items: [],
+      link: "/solutions/manufacturing-2",
     },
 
     {
       title: "Marketing",
       items: [],
+      link: "/solutions/marketing-2",
     },
 
     {
       title: "Cybersecurity",
       items: [],
+      link: "/solutions/cybersecurity-2",
+    },
+    {
+      title: "Financial Tech",
+      items: [
+        {
+          title: "Topaz",
+          desc: "A full banking platform with integrated,secure and agile solutions",
+          link: "/solutions/topaz-2",
+        },
+      ],
     },
   ],
 };

@@ -1,0 +1,73 @@
+/*==================================================
+RELATED CASE STUDIES
+==================================================*/
+
+.related-case-studies {
+    padding: 100px 0 120px;
+    background: #fff;
+    overflow: hidden;
+}
+
+.related-container {
+
+    width: min(1600px, 92%);
+    margin: auto;
+
+}
+
+.related-title {
+
+    text-align: center;
+    font-size: 58px;
+    line-height: 1.15;
+    font-weight: 800;
+    margin-bottom: 70px;
+    color: #071b4b;
+
+}
+
+.related-title span {
+
+    background: linear-gradient(90deg,
+            #0068d7,
+            #3ea7ff);
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+
+.related-grid {
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+
+}
+
+@media(max-width:1400px) {
+
+    .related-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+}
+
+@media(max-width:768px) {
+
+    .related-title {
+
+        font-size: 36px;
+        margin-bottom: 40px;
+
+    }
+
+    .related-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}

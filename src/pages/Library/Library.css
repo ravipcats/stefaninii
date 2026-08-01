@@ -1,0 +1,41 @@
+/*=========================================
+LIBRARY PAGE
+=========================================*/
+
+.library-page {
+
+    background: #fff;
+
+    min-height: 100vh;
+
+}
+
+.library-filter-bar {
+
+    width: min(1400px, 92%);
+
+    margin: 60px auto;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+
+}
+
+@media(max-width:768px) {
+
+    .library-filter-bar {
+
+        flex-direction: column;
+
+        align-items: center;
+
+        margin: 40px auto;
+
+    }
+
+}

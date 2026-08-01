@@ -49,7 +49,7 @@ import Newsroom from './components/Insights/NewsRoom/Newsroom';
 import One from './components/Insights/NewsRoom/Articles/One';
 import Two from './components/Insights/NewsRoom/Articles/Two';
 import Three from './components/Insights/NewsRoom/Articles/Three';
-
+import Four from './components/Insights/NewsRoom/Articles/Four';
 
 import CaseStudies from './pages/CaseStudies/CaseStudies';
 import CaseStudyDetails from './pages/CaseStudies/CaseStudyDetails';
@@ -69,6 +69,13 @@ import CaseNine from "./components/CaseStudyDetails/CaseStudy/Nine";
 import ArtificialIntelligenceSolutions from "./components/Solutions/artificial-intelligence-2";
 import ConsultingServicesSolutions from "./components/Solutions/consulting-services-2";
 
+import Library from "./pages/Library/Library";
+import LibraryOne from "./components/LibraryDetails/Library/One";
+import LibraryTwo from "./components/LibraryDetails/Library/Two";
+import LibraryThree from "./components/LibraryDetails/Library/Three";
+import LibraryFour from "./components/LibraryDetails/Library/Four";
+import LibraryFive from "./components/LibraryDetails/Library/Five";
+import LibrarySix from "./components/LibraryDetails/Library/Six";
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
   const prevPathRef = useRef(null);
@@ -183,6 +190,7 @@ function App() {
           <Route path="/news/one" element={<One />} />
           <Route path="/news/Two" element={<Two />} />
           <Route path="/news/Three" element={<Three />} />
+          <Route path="/news/Four" element={<Four />} />
 
           <Route path="/case-studies" element={<CaseStudies />} />
           <Route path="/case-study/:slug" element={<CaseStudyDetails />} />
@@ -201,6 +209,15 @@ function App() {
           <Route path="/Solutions/artificial-intelligence-2" element={<ArtificialIntelligenceSolutions />} />
           <Route path="/Solutions/consulting-services-2" element=
           {<ConsultingServicesSolutions />} />
+
+          <Route path="/library" element={<Library />} />
+          <Route path="/library/one" element={<LibraryOne />} />
+
+          <Route path="/library/two" element={<LibraryTwo />} />
+          <Route path="/library/three" element={<LibraryThree />} />
+          <Route path="/library/four" element={<LibraryFour />} />
+          <Route path="/library/five" element={<LibraryFive />} />
+          <Route path="/library/six" element={<LibrarySix />} />
 
         </Routes>
       </AnimatePresence>

@@ -143,12 +143,11 @@ export default function Header({ currentLang = "EN" }) {
                                         : "opacity-0 invisible -translate-y-3"
                                         }`}
                                 >
-
-
-
                                     <div className="w-5 h-5 bg-white rotate-45 absolute top-3 left-[435px] shadow-sm border-l border-t"></div>
 
                                     <div className="w-[900px] max-w-[calc(100vw-2rem)] rounded-2xl bg-white shadow-2xl overflow-hidden border">
+
+                                        {/* FEATURE CARDS */}
 
                                         {/* FEATURE CARDS */}
 
@@ -156,10 +155,11 @@ export default function Header({ currentLang = "EN" }) {
 
                                             {solutionMenu.cards.map((card, i) => (
 
-                                                <div
+                                                <Link
                                                     key={i}
-                                                    href={card.link || "#"}
-                                                    className="relative rounded-2xl overflow-hidden h-40 group cursor-pointer"
+                                                    to={card.link || "#"}
+                                                    onClick={() => setShowMega(false)}
+                                                    className="relative rounded-2xl overflow-hidden h-40 group cursor-pointer block"
                                                 >
 
                                                     <img
@@ -192,7 +192,7 @@ export default function Header({ currentLang = "EN" }) {
                                                             {card.desc}
                                                         </p>
                                                     </div>
-                                                </div>
+                                                </Link>
                                             ))}
                                         </div>
                                         <div className="grid grid-cols-12">
@@ -216,9 +216,9 @@ export default function Header({ currentLang = "EN" }) {
                                                         className={`w-full px-6 py-4 text-left text-sm transition-all duration-300
 
                             ${activeCategory === index
-                                                                ? "bg-white font-semibold text-black border-l-4 border-blue-600"
-                                                                : "hover:bg-white"
-                                                            }
+                                ? "bg-white font-semibold text-black border-l-4 border-blue-600"
+                                : "hover:bg-white"
+                            }
 
                             `}
                                                     >
@@ -297,9 +297,10 @@ export default function Header({ currentLang = "EN" }) {
                                             <div className="grid grid-cols-2 gap-x-6 gap-y-3">
 
                                                 {industriesMenu?.categories.map((cat, catIndex) => (
-                                                    <a
+                                                    <Link
                                                         key={catIndex}
-                                                        href={cat.link}
+                                                        to={cat.link}
+                                                        onClick={() => setShowIndustriesMega(false)}
                                                         className="flex items-center justify-between p-3 rounded-xl hover:bg-blue-50/60 group transition-colors"
                                                     >
                                                         <div className="flex items-center gap-3">
@@ -311,7 +312,7 @@ export default function Header({ currentLang = "EN" }) {
                                                             </span>
                                                         </div>
                                                         <ChevronRight size={16} className="text-gray-400 group-hover:text-blue-600 group-hover:translate-x-1 transition-all" />
-                                                    </a>
+                                                    </Link>
                                                 ))}
 
                                             </div>
@@ -351,9 +352,10 @@ export default function Header({ currentLang = "EN" }) {
                                             <div className="w-[480px] rounded-2xl bg-white shadow-2xl p-4 border space-y-2">
 
                                                 {insightsMenu?.categories.map((cat, catIndex) => (
-                                                    <a
+                                                    <Link
                                                         key={catIndex}
-                                                        href={cat.link}
+                                                        to={cat.link}
+                                                        onClick={() => setShowInsightsMega(false)}
                                                         className="flex items-start gap-4 p-3 rounded-xl hover:bg-blue-50/60 group transition-colors"
                                                     >
                                                         <div className="p-2.5 rounded-xl bg-blue-50 group-hover:bg-blue-100 transition-colors shrink-0 mt-0.5">
@@ -367,7 +369,7 @@ export default function Header({ currentLang = "EN" }) {
                                                                 {cat.desc}
                                                             </p>
                                                         </div>
-                                                    </a>
+                                                    </Link>
                                                 ))}
 
                                             </div>
@@ -378,85 +380,79 @@ export default function Header({ currentLang = "EN" }) {
 
                                     : item.label === "Stefanini" ?
 
-                                    <div
-                                        key={index}
-                                        className="relative"
-                                        onMouseEnter={() => setShowStefaniniMega(true)}
-                                        onMouseLeave={() => setShowStefaniniMega(false)}
-                                    >
-
-                                        <button className="flex items-center gap-1 font-bold text-lg text-black hover:text-blue-600 transition-colors">
-
-                                            {item.label}
-
-                                            <ChevronDown size={17} />
-
-                                        </button>
-
                                         <div
-                                            className={`absolute left-1/2 -translate-x-1/2 pt-6 transition-all duration-300 ${showStefaniniMega
-                                                ? "opacity-100 visible translate-y-0"
-                                                : "opacity-0 invisible -translate-y-3"
-                                                }`}
+                                            key={index}
+                                            className="relative"
+                                            onMouseEnter={() => setShowStefaniniMega(true)}
+                                            onMouseLeave={() => setShowStefaniniMega(false)}
                                         >
 
-                                            <div className="w-5 h-5 bg-white rotate-45 absolute top-3 left-[210px] shadow-sm border-l border-t"></div>
+                                            <button className="flex items-center gap-1 font-bold text-lg text-black hover:text-blue-600 transition-colors">
 
-                                            <div className="w-[480px] rounded-2xl bg-white shadow-2xl p-4 border space-y-2">
+                                                {item.label}
 
-                                                {stefaniniMenu?.categories.map((cat, catIndex) => (
-                                                    <a
-                                                        key={catIndex}
-                                                        href={cat.link}
-                                                        className="flex items-start gap-4 p-3 rounded-xl hover:bg-blue-50/60 group transition-colors"
-                                                    >
-                                                        <div className="p-2.5 rounded-xl bg-blue-50 group-hover:bg-blue-100 transition-colors shrink-0 mt-0.5">
-                                                            {getInsightIcon(cat.title)}
-                                                        </div>
-                                                        <div>
-                                                            <h4 className="font-bold text-gray-900 text-base group-hover:text-blue-600 transition-colors">
-                                                                {cat.title}
-                                                            </h4>
-                                                            <p className="text-gray-500 text-sm mt-0.5 leading-relaxed">
-                                                                {cat.desc}
-                                                            </p>
-                                                        </div>
-                                                    </a>
-                                                ))}
+                                                <ChevronDown size={17} />
+
+                                            </button>
+
+                                            <div
+                                                className={`absolute left-1/2 -translate-x-1/2 pt-6 transition-all duration-300 ${showStefaniniMega
+                                                    ? "opacity-100 visible translate-y-0"
+                                                    : "opacity-0 invisible -translate-y-3"
+                                                    }`}
+                                            >
+
+                                                <div className="w-5 h-5 bg-white rotate-45 absolute top-3 left-[210px] shadow-sm border-l border-t"></div>
+
+                                                <div className="w-[480px] rounded-2xl bg-white shadow-2xl p-4 border space-y-2">
+
+                                                    {stefaniniMenu?.categories.map((cat, catIndex) => (
+                                                        <Link
+                                                            key={catIndex}
+                                                            to={cat.link}
+                                                            onClick={() => setShowStefaniniMega(false)}
+                                                            className="flex items-start gap-4 p-3 rounded-xl hover:bg-blue-50/60 group transition-colors"
+                                                        >
+                                                            <div className="p-2.5 rounded-xl bg-blue-50 group-hover:bg-blue-100 transition-colors shrink-0 mt-0.5">
+                                                                {getInsightIcon(cat.title)}
+                                                            </div>
+                                                            <div>
+                                                                <h4 className="font-bold text-gray-900 text-base group-hover:text-blue-600 transition-colors">
+                                                                    {cat.title}
+                                                                </h4>
+                                                                <p className="text-gray-500 text-sm mt-0.5 leading-relaxed">
+                                                                    {cat.desc}
+                                                                </p>
+                                                            </div>
+                                                        </Link>
+                                                    ))}
+
+                                                </div>
 
                                             </div>
 
                                         </div>
 
-                                    </div>
+                                        :
 
-                                    :
+                                        <div key={index} className="flex items-center gap-1 font-bold text-lg text-black hover:text-blue-600 transition-colors">
 
-                                    <a
-                                        key={index}
-                                        href="#"
-                                        className="flex items-center gap-1 font-bold text-lg text-black hover:text-blue-600 transition-colors"
-                                    >
+                                            {item.link ? (
+                                                <Link
+                                                    to={item.link}
+                                                    className="flex items-center gap-1 font-bold text-lg text-black hover:text-blue-600 transition-colors"
+                                                >
+                                                    {item.label}
+                                                </Link>
+                                            ) : (
+                                                <button
+                                                    className="flex items-center gap-1 font-bold text-lg text-black hover:text-blue-600 transition-colors"
+                                                >
+                                                    {item.label}
+                                                </button>
+                                            )}
 
-                                        {item.link ? (
-                                            <Link
-                                                key={index}
-                                                to={item.link}
-                                                className="flex items-center gap-1 font-bold text-lg text-black hover:text-blue-600 transition-colors"
-                                            >
-                                                {item.label}
-                                            </Link>
-                                        ) : (
-                                            <button
-                                                key={index}
-                                                className="flex items-center gap-1 font-bold text-lg text-black hover:text-blue-600 transition-colors"
-                                            >
-                                                {item.label}
-                                            </button>
-                                        )}
-
-                                    </a>
-                                    
+                                        </div>
 
                     ))}
 
@@ -464,12 +460,12 @@ export default function Header({ currentLang = "EN" }) {
 
                 <div className="hidden lg:flex gap-3 items-center">
 
-                    <a
-                        href="/contact"
+                    <Link
+                        to="/contact"
                         className="px-5 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
                     >
                         Contact
-                    </a>
+                    </Link>
 
                     {/* LANGUAGE DROPDOWN */}
                     <div className="relative">
@@ -527,6 +523,7 @@ export default function Header({ currentLang = "EN" }) {
                                                 if (item.label === "Solutions") setMobileView("solutions");
                                                 if (item.label === "Industries") setMobileView("industries");
                                                 if (item.label === "Insights") setMobileView("insights");
+                                                if (item.label === "Stefanini") setMobileView("stefanini");
                                             }}
                                             className="w-full flex items-center justify-between rounded-lg px-4 py-3 text-sm font-medium text-black hover:bg-blue-50 hover:text-blue-600 transition-colors"
                                         >
@@ -534,23 +531,25 @@ export default function Header({ currentLang = "EN" }) {
                                             <ChevronRight size={18} className="text-gray-400" />
                                         </button>
                                     ) : (
-                                        <a
-                                            href="#"
+                                        <Link
+                                            to={item.link || "#"}
+                                            onClick={() => setOpen(false)}
                                             className="block rounded-lg px-4 py-3 text-sm font-medium text-black hover:bg-blue-50 hover:text-blue-600 transition-colors"
                                         >
                                             {item.label}
-                                        </a>
+                                        </Link>
                                     )}
                                 </div>
                             ))}
 
                             <div className="flex gap-3 pt-3 border-t mt-2">
-                                <a
-                                    href="/contact"
+                                <Link
+                                    to="/contact"
+                                    onClick={() => setOpen(false)}
                                     className="flex-1 text-center rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-medium text-white hover:bg-blue-700 transition-colors"
                                 >
                                     Contact
-                                </a>
+                                </Link>
                                 <button
                                     onClick={() => setMobileView("lang")}
                                     className="flex items-center justify-center gap-1 rounded-lg border px-4 py-2.5 text-sm font-medium text-gray-700"
@@ -586,11 +585,25 @@ export default function Header({ currentLang = "EN" }) {
                             </div>
 
                             <div className="border-t pt-3 space-y-3 bg-gray-50 p-4 rounded-xl">
+                                {solutionMenu.categories[mobileActiveSolutionCat]?.link ? (
+                                    <Link
+                                        to={solutionMenu.categories[mobileActiveSolutionCat].link}
+                                        onClick={() => setOpen(false)}
+                                        className="block group font-bold text-gray-900 text-sm hover:text-blue-600 transition-colors mb-2"
+                                    >
+                                        View {solutionMenu.categories[mobileActiveSolutionCat].title} Overview →
+                                    </Link>
+                                ) : null}
                                 {solutionMenu.categories[mobileActiveSolutionCat]?.items?.map((sub, sIdx) => (
-                                    <a key={sIdx} href="#" className="block group">
+                                    <Link 
+                                        key={sIdx} 
+                                        to={sub.link || "#"} 
+                                        onClick={() => setOpen(false)}
+                                        className="block group py-1"
+                                    >
                                         <h4 className="font-bold text-gray-900 text-sm group-hover:text-blue-600 transition-colors">{sub.title}</h4>
                                         <p className="text-gray-500 text-xs mt-0.5">{sub.desc}</p>
-                                    </a>
+                                    </Link>
                                 ))}
                             </div>
                         </div>
@@ -608,9 +621,10 @@ export default function Header({ currentLang = "EN" }) {
 
                             <div className="space-y-1">
                                 {industriesMenu?.categories.map((cat, idx) => (
-                                    <a
+                                    <Link
                                         key={idx}
-                                        href="#"
+                                        to={cat.link || "#"}
+                                        onClick={() => setOpen(false)}
                                         className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-blue-50 group transition-colors"
                                     >
                                         <div className="p-2 rounded-lg bg-blue-50 group-hover:bg-blue-100 transition-colors">
@@ -619,7 +633,7 @@ export default function Header({ currentLang = "EN" }) {
                                         <span className="font-bold text-gray-900 text-sm group-hover:text-blue-600 transition-colors">
                                             {cat.title}
                                         </span>
-                                    </a>
+                                    </Link>
                                 ))}
                             </div>
                         </div>
@@ -637,9 +651,10 @@ export default function Header({ currentLang = "EN" }) {
 
                             <div className="space-y-2">
                                 {insightsMenu?.categories.map((cat, idx) => (
-                                    <a
+                                    <Link
                                         key={idx}
-                                        href="#"
+                                        to={cat.link || "#"}
+                                        onClick={() => setOpen(false)}
                                         className="flex items-start gap-3 px-4 py-3 rounded-lg hover:bg-blue-50 group transition-colors"
                                     >
                                         <div className="p-2.5 rounded-xl bg-blue-50 group-hover:bg-blue-100 transition-colors shrink-0 mt-0.5">
@@ -653,7 +668,42 @@ export default function Header({ currentLang = "EN" }) {
                                                 {cat.desc}
                                             </p>
                                         </div>
-                                    </a>
+                                    </Link>
+                                ))}
+                            </div>
+                        </div>
+                    )}
+                    {mobileView === "stefanini" && (
+                        <div className="space-y-1">
+                            <button
+                                onClick={() => setMobileView("main")}
+                                className="flex items-center gap-2 text-blue-600 font-semibold px-4 py-3 text-sm hover:underline"
+                            >
+                                <ArrowLeft size={16} /> Voltar
+                            </button>
+
+                            <div className="font-bold text-gray-900 px-4 py-2 text-base">Stefanini</div>
+
+                            <div className="space-y-2">
+                                {stefaniniMenu?.categories.map((cat, idx) => (
+                                    <Link
+                                        key={idx}
+                                        to={cat.link || "#"}
+                                        onClick={() => setOpen(false)}
+                                        className="flex items-start gap-3 px-4 py-3 rounded-lg hover:bg-blue-50 group transition-colors"
+                                    >
+                                        <div className="p-2.5 rounded-xl bg-blue-50 group-hover:bg-blue-100 transition-colors shrink-0 mt-0.5">
+                                            {getInsightIcon(cat.title)}
+                                        </div>
+                                        <div>
+                                            <h4 className="font-bold text-gray-900 text-sm group-hover:text-blue-600 transition-colors">
+                                                {cat.title}
+                                            </h4>
+                                            <p className="text-gray-500 text-xs mt-0.5 leading-relaxed">
+                                                {cat.desc}
+                                            </p>
+                                        </div>
+                                    </Link>
                                 ))}
                             </div>
                         </div>

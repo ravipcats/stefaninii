@@ -14,7 +14,8 @@ export default function ContactFormSection({
   title = "Let’s build it together?",
   description = "Tell us about what your business needs. A specialist will be in touch so we can build it together",
   submitButtonText = "Enviar",
-  onSubmit = (formData) => console.log("Form Submitted:", formData)
+  onSubmit = (formData) => console.log("Form Submitted:", formData),
+  brandGraphicSrc = "/letsmakeithappen.png"
 }) {
   const [formData, setFormData] = useState({
     name: '',
@@ -53,9 +54,18 @@ export default function ContactFormSection({
               {title}
             </h2>
 
-            <p className="text-slate-600 text-base sm:text-lg leading-relaxed max-w-md">
+            <p className="text-slate-600 text-base sm:text-lg leading-relaxed max-w-md mb-8">
               {description}
             </p>
+
+            {/* Let's Make It Happen Picture Placed Below Text */}
+            <div className="w-full max-w-sm">
+              <img 
+                src={brandGraphicSrc} 
+                alt="Let's Make It Happen" 
+                className="w-full h-auto object-contain select-none"
+              />
+            </div>
           </div>
 
           {/* Right Column: Interactive Form Card */}

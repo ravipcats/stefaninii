@@ -66,6 +66,9 @@ import CaseSeven from "./components/CaseStudyDetails/CaseStudy/Seven";
 import CaseEight from "./components/CaseStudyDetails/CaseStudy/Eight";
 import CaseNine from "./components/CaseStudyDetails/CaseStudy/Nine";
 
+import ArtificialIntelligenceSolutions from "./components/Solutions/artificial-intelligence-2";
+import ConsultingServicesSolutions from "./components/Solutions/consulting-services-2";
+
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
   const prevPathRef = useRef(null);
@@ -195,6 +198,9 @@ function App() {
           <Route path="/case-study/seven" element={<CaseSeven />} />
           <Route path="/case-study/eight" element={<CaseEight />} />
           <Route path="/case-study/nine" element={<CaseNine />} />
+          <Route path="/Solutions/artificial-intelligence-2" element={<ArtificialIntelligenceSolutions />} />
+          <Route path="/Solutions/consulting-services-2" element=
+          {<ConsultingServicesSolutions />} />
 
         </Routes>
       </AnimatePresence>

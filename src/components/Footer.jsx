@@ -6,42 +6,44 @@ import {
 } from "react-icons/fa";
 
 const Footer = () => {
+    // Updated data structures to include specific links for each topic
     const solutions = [
-        "Artificial Intelligence",
-        "Consulting Services",
-        "Cloud",
-        "Cybersecurity",
-        "Topaz",
-        "Marketing",
-        "Manufacturing",
-        "Data & Analytics",
-        "Enterprise Platforms",
-        "Digital Workplace Services",
-        "Hybrid Infrastructure",
-        "Applications",
-        "Operations",
+        { name: "Artificial Intelligence", path: "/solutions/artificial-intelligence-2" },
+        { name: "Consulting Services", path: "/solutions/consulting-services-2" },
+        { name: "Cloud", path: "/solutions/cloud" },
+        { name: "Cybersecurity", path: "/solutions/cybersecurity-2" },
+        { name: "Topaz", path: "/solutions/topaz-2" },
+        { name: "Marketing", path: "/solutions/marketing-2" },
+        { name: "Manufacturing", path: "/solutions/manufacturing-2" },
+        { name: "Data & Analytics", path: "/solutions/data-analytics-2" },
+        { name: "Enterprise Platforms", path: "/solutions/enterprise-platforms-2" },
+        { name: "Digital Workplace Services", path: "/solutions/digital-workplace-2" },
+        { name: "Hybrid Infrastructure", path: "/solutions/hybrid-infrastructure" },
+        { name: "Applications", path: "/solutions/applicationssolutions" },
+        { name: "Operations", path: "/solutions/operations" },
     ];
 
     const industries = [
-        "Consumer Services",
-        "Telecom",
-        "Retail Industry",
-        "Financial Services",
-        "Public and Social Sector",
-        "Natural Resources",
-        "Consumer Goods",
-        "Industrial Goods",
-        "Health and Life Sciences",
+        { name: "Consumer Services", path: "/industries/consumerservices" },
+        { name: "Telecom", path: "/industries/telecom" },
+        { name: "Retail Industry", path: "/industries/retailindustry" },
+        { name: "Financial Services", path: "/industries/financialservices" },
+        { name: "Public and Social Sector", path: "/industries/publicandsocialsector" },
+        { name: "Natural Resources", path: "/industries/naturalresources" },
+        { name: "Consumer Goods", path: "/industries/consumergoods" },
+        { name: "Industrial Goods", path: "/industries/industrialgoods" },
+        { name: "Health and Life Sciences", path: "/industries/healthandlifesciences" },
     ];
 
     const institutional = [
-        "Stefanini",
-        "Library",
-        "Case Studies",
-        "Contact",
-        "Information Security Policy",
-        "Occupational Health & Safety Policy",
-        "Privacy Policy",
+        { name: "Stefanini", path: "/" },
+        { name: "News Room", path: "/Insights/NewsRoom/Newsroom" },
+        { name: "Library", path: "#" },
+        { name: "Case Studies", path: "#" },
+        { name: "Contact", path: "#" },
+        { name: "Information Security Policy", path: "#" },
+        { name: "Occupational Health & Safety Policy", path: "#" },
+        { name: "Privacy Policy", path: "#" },
     ];
 
     return (
@@ -88,12 +90,12 @@ const Footer = () => {
 
                         <ul className="space-y-4">
                             {solutions.map((item) => (
-                                <li key={item}>
+                                <li key={item.name}>
                                     <a
-                                        href="#"
+                                        href={item.path}
                                         className="text-[18px] text-gray-200 hover:text-white transition"
                                     >
-                                        {item}
+                                        {item.name}
                                     </a>
                                 </li>
                             ))}
@@ -107,12 +109,12 @@ const Footer = () => {
 
                         <ul className="space-y-4">
                             {industries.map((item) => (
-                                <li key={item}>
+                                <li key={item.name}>
                                     <a
-                                        href="#"
+                                        href={item.path}
                                         className="text-[18px] text-gray-200 hover:text-white transition"
                                     >
-                                        {item}
+                                        {item.name}
                                     </a>
                                 </li>
                             ))}
@@ -126,12 +128,12 @@ const Footer = () => {
 
                         <ul className="space-y-4">
                             {institutional.map((item) => (
-                                <li key={item}>
+                                <li key={item.name}>
                                     <a
-                                        href="#"
+                                        href={item.path}
                                         className="text-[18px] text-gray-200 hover:text-white transition"
                                     >
-                                        {item}
+                                        {item.name}
                                     </a>
                                 </li>
                             ))}

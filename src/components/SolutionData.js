@@ -5,11 +5,13 @@ export const solutionMenu = {
       desc: "SAI APP is an AI platform that accelerates applications and operations.",
       image:
         "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200",
+      link: "/solutions/artificial-intelligence-2",
     },
     {
       title: "Consulting Services",
       desc: "Consulting services for organizational and technological transformation.",
       image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200",
+      link: "/solutions/consulting-services-2",
     },
   ],
 

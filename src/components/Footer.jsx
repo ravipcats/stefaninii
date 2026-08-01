@@ -38,10 +38,10 @@ const Footer = () => {
         "Stefanini",
         "Library",
         "Case Studies",
-        "Contact",
-        "Information Security Policy",
-        "Occupational Health & Safety Policy",
-        "Privacy Policy",
+        // "Contact",
+        // "Information Security Policy",
+        // "Occupational Health & Safety Policy",
+        // "Privacy Policy",
     ];
 
     return (
@@ -58,21 +58,21 @@ const Footer = () => {
                         </div>
                         <div className="flex gap-6 text-3xl">
                             <a
-                                href="#"
+                                href="https://www.instagram.com/stefanini_na_apac/"
                                 className="hover:text-blue-400 duration-300"
                             >
                                 <FaInstagram />
                             </a>
 
                             <a
-                                href="#"
+                                href="https://www.linkedin.com/company/stefanini/"
                                 className="hover:text-blue-400 duration-300"
                             >
                                 <FaLinkedin />
                             </a>
 
                             <a
-                                href="#"
+                                href="https://www.youtube.com/@StefaniniGlobal"
                                 className="hover:text-blue-400 duration-300"
                             >
                                 <FaYoutube />

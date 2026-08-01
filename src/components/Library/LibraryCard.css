@@ -1,0 +1,95 @@
+/*==================================================
+LIBRARY CARD
+==================================================*/
+
+.library-card {
+
+    background: #fff;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    transition: .35s;
+
+}
+
+.library-card-link {
+
+    text-decoration: none;
+
+    color: inherit;
+
+    display: block;
+
+}
+
+.library-card-image {
+
+    overflow: hidden;
+
+    border-radius: 18px;
+
+}
+
+.library-card-image img {
+
+    width: 100%;
+
+    aspect-ratio: 16/10;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: .45s;
+
+}
+
+.library-card:hover img {
+
+    transform: scale(1.05);
+
+}
+
+.library-card-content {
+
+    padding: 18px 0 0;
+
+}
+
+.library-card-meta {
+
+    display: flex;
+
+    gap: 8px;
+
+    align-items: center;
+
+    color: #7b8794;
+
+    font-size: 14px;
+
+    margin-bottom: 12px;
+
+}
+
+.library-card-content h3 {
+
+    color: #071b4b;
+
+    font-size: 30px;
+
+    line-height: 1.3;
+
+    font-weight: 700;
+
+    transition: .3s;
+
+}
+
+.library-card:hover h3 {
+
+    color: #0068d7;
+
+}

@@ -1,0 +1,115 @@
+/*==================================================
+LIBRARY HERO
+==================================================*/
+
+.library-hero {
+
+    background: #fff;
+
+    padding: 110px 0 70px;
+
+    border-bottom: 1px solid #e8e8e8;
+
+}
+
+.library-hero-container {
+
+    width: min(1200px, 92%);
+
+    margin: auto;
+
+    text-align: center;
+
+}
+
+.library-tag {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 8px 20px;
+
+    border-radius: 40px;
+
+    background: #0068d7;
+
+    color: #fff;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    margin-bottom: 28px;
+
+}
+
+.library-hero h1 {
+
+    font-size: 72px;
+
+    line-height: 1;
+
+    font-weight: 800;
+
+    color: #071b4b;
+
+    margin-bottom: 22px;
+
+}
+
+.library-hero p {
+
+    width: min(760px, 100%);
+
+    margin: auto;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    color: #5f6678;
+
+}
+
+/*========================*/
+
+@media(max-width:992px) {
+
+    .library-hero {
+
+        padding: 90px 0 60px;
+
+    }
+
+    .library-hero h1 {
+
+        font-size: 56px;
+
+    }
+
+}
+
+@media(max-width:768px) {
+
+    .library-hero {
+
+        padding: 70px 0 50px;
+
+    }
+
+    .library-hero h1 {
+
+        font-size: 42px;
+
+    }
+
+    .library-hero p {
+
+        font-size: 16px;
+
+    }
+
+}
